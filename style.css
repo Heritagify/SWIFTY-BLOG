@@ -36,7 +36,7 @@ h2{
 }
 h3{
     font-size: 2rem;
-    margin: .8rem 0 .8rem -6rem;
+    margin: 0 0 1rem -6rem;
 }
 h4{
     font-size: 1rem;
@@ -48,7 +48,7 @@ img{
     object-fit: cover;
 }
 nav{
-    height: 5.3rem;
+    height: 6.5rem;
     width: 100vw;
     position: fixed;
     top: 0;
@@ -64,38 +64,52 @@ nav{
     height: 100%;
 }
 .profile-img{
-    border: 3px solid red;
-    height: 3rem;
-    width: 3.2rem;
+    border: 3px solid white;
+    height: 3.5rem;
+    width: 3.4rem;
     overflow: hidden;
     border-radius: 50%;
 }
 
 .logo h3{
-    font-size: 3rem;
+    font-size: 3.8rem;
     text-shadow: .2rem .2rem rgb(211, 189, 168);
     font-weight: 600;
     color: white;
-    /* color: rgb(11, 4, 75); */
 }
 .logo h3 span{
     margin-right: 10px;
     color: #ffffff;
-    font-size: 4rem;
+    font-size: 5rem;
     text-shadow: none;
+    transition: .3s ease-in;
 }
 .nav-link{
     display: flex;
-    gap: 4rem;
+    gap: 3rem;
     margin: 0;
     align-items: center;
 }
 nav .nav-link a{
+    border-radius: 20px;
+    outline: none;
+    width: 150px;
     color: #ffff;
+    font-weight: 300;
+    font-size: 22px;
+    padding: .6rem;
+    box-shadow: 0 1px 10px white;
+}
+.nav-link a:hover{
+    background: white;
+    color: blue;
+    box-shadow: 0 1px 20px white;
+    transition: .4s ease;
 }
 .phone-button{
     display: none;
 }
+
 marquee{
     padding: .3rem;
     font-size: 20px;
@@ -104,4 +118,35 @@ marquee{
     margin-top: 56rem;
     display: block;
     background-color: blue;
+}
+.profile{
+    cursor: pointer;
+    position: relative;
+}
+.profile ul{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    top: 140%;
+    box-shadow: 0 1rem 1rem rgb(72, 70, 70);
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.profile ul li a{
+    font-size: 18px;
+    display: block;
+    padding: 1rem;
+    color: white;
+    background: rgb(26, 159, 220);
+    transition: .3s ease;
+}
+.profile ul li:last-child a{
+    background: rgba(212, 122, 4, 0.815);
+}
+.profile:hover ul{
+    visibility: visible;
+    opacity: 1;
 }
