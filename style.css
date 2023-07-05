@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    list-style-type: none;
+    border: none;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: .4s ease-in-out;
+}
+body{
+    line-height: 1.9;
+    font-size: 17px;
+    overflow-x: hidden;
+}
+.container{
+    max-width: 101.5rem;
+    margin: 0 auto;
+    width: 90%;
+}
+section{
+    margin-top: 3rem;
+    width: 100vw;
+}
+h1,h2,h3,h4,h5{
+    color: black;
+}
+h1{
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+h2{
+    font-size: 2.7rem;
+    margin: 1rem 0;
+}
+h3{
+    font-size: 2rem;
+    margin: .8rem 0 .8rem -6rem;
+}
+h4{
+    font-size: 1rem;
+    margin: 1rem;
+}
+img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+nav{
+    height: 5.3rem;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background: rgb(6, 90, 150);
+    box-shadow: 0 6px 16px rgb(9, 174, 192);
+
+}
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.profile-img{
+    border: 3px solid red;
+    height: 3rem;
+    width: 3.2rem;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.logo h3{
+    font-size: 3rem;
+    text-shadow: .2rem .2rem rgb(211, 189, 168);
+    font-weight: 600;
+    color: white;
+    /* color: rgb(11, 4, 75); */
+}
+.logo h3 span{
+    margin-right: 10px;
+    color: #ffffff;
+    font-size: 4rem;
+    text-shadow: none;
+}
+.nav-link{
+    display: flex;
+    gap: 4rem;
+    margin: 0;
+    align-items: center;
+}
+nav .nav-link a{
+    color: #ffff;
+}
+.phone-button{
+    display: none;
+}
+marquee{
+    padding: .3rem;
+    font-size: 20px;
+    color: aliceblue;
+    position: fixed;
+    margin-top: 56rem;
+    display: block;
+    background-color: blue;
+}
