@@ -5,7 +5,8 @@ img {vertical-align: middle;}
 .slideshow-container {
   max-width: 100%;
   position: relative;
-  top: 120px;
+  top: 170px;
+  bottom: 20px;
   /* margin: auto; */
 }
 

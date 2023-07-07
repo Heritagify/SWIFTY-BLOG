@@ -10,7 +10,7 @@
     transition: .4s ease-in-out;
 }
 body{
-    background-image: linear-gradient(to right, rgba(7, 5, 5, 0), rgb(205, 148, 148));
+    /* background-image: linear-gradient(to bottom, rgba(9, 3, 3, 0), rgb(138, 65, 65)); */
     line-height: 1.9;
     font-size: 17px;
     overflow-x: hidden;
@@ -36,8 +36,8 @@ h3{
     margin: 1rem 0 1rem 1rem;
 }
 h4{
-    font-size: 1rem;
-    margin: 1rem;
+    font-size: 1.5rem;
+    /* margin: 1rem; */
 }
 img{
     display: block;
@@ -70,7 +70,7 @@ nav{
 }
 
 .logo h3{
-    font-size: 3.8rem;
+    font-size: 56px;
     text-shadow: .2rem .2rem rgb(211, 189, 168);
     font-weight: 600;
     color: white;
@@ -108,15 +108,24 @@ nav .nav-link a{
     display: none;
 }
 
-marquee{
-    padding: .3rem;
+.date_marquee{
+    width: 100vw;
+    display: flex;
     font-size: 20px;
     color: aliceblue;
     position: fixed;
-    margin-top: 56rem;
-    display: block;
-    background-color: blue;
-    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+    z-index: 5;
+    margin-top: 6.7rem;
+    background-color: #310666;
+    /* background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
+}
+#todaysDate{
+    width: 300px;
+    text-align: center; 
+    font-weight: 600; 
+    font-size: 25px; 
+    color: white;
+    background: rgb(221, 30, 17);
 }
 .profile{
     cursor: pointer;
@@ -156,14 +165,15 @@ marquee{
 /* ......section........ */
 
 section{
-    margin-top: 10rem;
+    margin-top: 14rem;
     width: 100vw;
 }
 .category-btn{
-    display: inline-block;
-    background: grey;
-    color: #ffffff;
+    display: inline;
+    background: #310666;
+    color: rgb(193, 105, 193);
     padding: .5rem 1rem;
+    /* background-image: linear-gradient( rgb(4, 4, 32), rgb(96, 6, 6)); */
 
 }
 .category-btn:hover{
@@ -174,7 +184,6 @@ section{
     border-radius: 5rem;
     overflow: hidden;
     margin-bottom: 1rem;
-    /* height: 400px; */
     object-fit: cover;
 }
 .post-profile{
@@ -192,6 +201,8 @@ section{
     color: #ffffff;
 }
 .featured-container{
+    /* display: flex;
+    flex-wrap: wrap; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
@@ -202,10 +213,73 @@ section{
 .post-container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 5rem;
+    gap: 5rem; 
     margin-bottom: 5rem auto;
 }
 .post .post-thumb{
     border: .8rem solid purple;
     border-radius: 4rem;
+}
+
+.category-container{
+    display: grid;
+    grid-template-columns: repeat(3, 4fr);
+    gap: 1rem;
+    text-align: center;
+}
+.categories{
+    padding: 3rem 0;
+    border-top: 2px solid purple;
+    border-bottom: 2px solid purple;
+    background: rgb(49, 203, 133);
+}
+
+footer{
+    background: #4a0c94;
+    padding-top: 5rem;
+    box-shadow: inset 0 1.5rem 1.5rem #260651;
+}
+.footer-social{
+    display: flex;
+    margin-inline: auto;
+    width: fit-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.7rem;
+}
+.footer-social a{
+    background: #9871c8;
+    border-radius: 50%;
+    height: 2.3rem;
+    width: 2.3rem;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* color: white; */
+}
+.footer-social a:hover{
+    background: #ffffff;
+    color: black;
+}
+.footer-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footer-container ul li a{
+    color: white;
+}
+.footer-container ul li a:hover{
+    color: rgb(237, 38, 38);
+}
+.footer-container h4{
+    color: lightblue;
+}
+.footer-copy{
+    color: white;
+    padding: 1rem 0 1rem 0;
+    border-top: 1px solid rgb(38, 161, 175);
+    text-align: center;
+    margin-top: 3rem;
 }
