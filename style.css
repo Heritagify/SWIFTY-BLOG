@@ -45,7 +45,7 @@ img{
     object-fit: cover;
 }
 nav{
-    height: 6.5rem;
+    height: 5rem;
     width: 100vw;
     position: fixed;
     top: 0;
@@ -105,7 +105,7 @@ nav .nav-link a{
     transition: .4s ease;
 }
 .phone-button{
-    display: none;
+    /* display: none; */
 }
 
 .date_marquee{
@@ -115,7 +115,7 @@ nav .nav-link a{
     color: aliceblue;
     position: fixed;
     z-index: 5;
-    margin-top: 6.7rem;
+    margin-top: 5rem;
     background-color: #310666;
     /* background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
 }
@@ -228,6 +228,7 @@ section{
     text-align: center;
 }
 .categories{
+    margin-top: 55px;
     padding: 3rem 0;
     border-top: 2px solid purple;
     border-bottom: 2px solid purple;
@@ -275,6 +276,8 @@ footer{
 }
 .footer-container h4{
     color: lightblue;
+    border-bottom: 3px solid lightblue;
+    width: 35%;
 }
 .footer-copy{
     color: white;
@@ -283,3 +286,184 @@ footer{
     text-align: center;
     margin-top: 3rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ..................MEDIA QUERY............. */
+@media (max-width:1024px){
+    h2{
+        font-size: 1.6rem;
+    }
+    h3{
+        font-size: 1.2rem;
+    }
+    h5{
+        font-size: .8rem;
+    }
+    nav .phone-button{
+        display: inline-block;
+        font-size: 2rem;
+        background: transparent;
+        color: white;
+        cursor: pointer;
+    }
+    nav .close{
+        display: none;
+    }
+    .nav-container{
+        position: relative;
+    }
+    nav .nav-link{
+        display: none;
+        position: absolute;
+        right: 0;
+        flex-direction: column;
+        gap: 0 !important;
+        width: 12rem;
+        align-items: flex-start;
+        justify-content: center;
+        top: 5rem;
+    }
+    .nav-link li{
+        width: 100%;
+        display: flex;
+        align-items:center;
+        height: 4.5rem;
+        box-shadow: 2rem 3rem 7rem #140528;
+        opacity: 0;
+        animation: HERO 400ms 0s ease forwards;
+        transform-origin: top;
+}
+
+    @keyframes HERO {
+        0%{
+            transform: rotateX(90deg);
+        }
+        100%{
+            opacity: 1;
+            transform: rotateY(0deg);
+        }
+    }
+    .nav-link li:nth-child(2){
+        animation-delay: 200ms;
+    }
+    .nav-link li:nth-child(3){
+        animation-delay: 250ms;
+    }
+    .nav-link li:nth-child(4){
+        animation-delay: 300ms;
+    }
+    .nav-link li:nth-child(5){
+        animation-delay: 350ms;
+    }
+    .nav-link li:nth-child(6){
+        animation-delay: 400ms;
+    }
+
+    .nav-link li a{
+        border-radius: 2px;
+        box-shadow: none;
+        font-size: 15px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        background: #1e0873;
+        align-items: center;
+        padding: 0 2rem;
+    }
+    .nav-link li a:hover{
+        font-size: 20px;
+        opacity: 0.85;
+        color: aliceblue;
+        background: #0e359f;
+    }
+    nav ul li:last-child{
+        background: #11085f;
+    }
+    .nav-profile{
+        margin: 0 auto;
+    }
+
+    .featured-container{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 80%;
+    }
+    .featured-container .post-thumb{
+        width: 70%;
+        margin: 0 auto;
+    }
+    .post-container{
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+    .post-container img{
+        height: 80%;
+        background-position: contain;
+    }
+    .post-container .post-thumb{
+        border: .5rem solid purple;
+    }
+}
+
+/* 
+@media (max-width:600px){
+    .featured-container{
+        width: 90%;
+        gap: 0.5rem;
+    }
+    .post-container{
+        grid-template-columns: 1fr;
+        gap: .5rem;
+    }
+    .category-container{
+        grid-template-columns: 1fr 1fr;
+        width: 90%;
+    }
+    .footer-container{
+        flex-direction: column;
+        gap: .5rem;
+    }
+    .date_marquee{
+        display: flex;
+        font-size: 17px;
+        color: aliceblue;
+        position: fixed;
+        z-index: 5;
+        margin-top: 5rem;
+        background-color: #310666;
+        padding: 10px;
+        /* background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
+    }
+    #todaysDate{
+        display: none;
+    }
+}
+@media (max-width:360px){
+    .post-container{
+        grid-template-columns: 1fr;
+        gap: 5rem;
+    }
+} */
