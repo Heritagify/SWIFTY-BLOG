@@ -428,7 +428,7 @@ footer{
     }
 }
 
-/* 
+
 @media (max-width:600px){
     .featured-container{
         width: 90%;
@@ -466,4 +466,4 @@ footer{
         grid-template-columns: 1fr;
         gap: 5rem;
     }
-} */
+}
