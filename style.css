@@ -33,7 +33,7 @@ h2{
 }
 h3{
     font-size: 2rem;
-    margin: 1rem 0 1rem 1rem;
+    margin: 1rem 0 1rem .1rem;
 }
 h4{
     font-size: 1.5rem;
@@ -84,8 +84,8 @@ nav{
 }
 .nav-link{
     display: flex;
-    gap: 3rem;
-    margin: 0;
+    gap: 1.5rem;
+    margin-left: 20px;
     align-items: center;
 }
 nav .nav-link a{
@@ -105,7 +105,7 @@ nav .nav-link a{
     transition: .4s ease;
 }
 .phone-button{
-    /* display: none; */
+    display: none;
 }
 
 .date_marquee{
@@ -130,6 +130,7 @@ nav .nav-link a{
 .profile{
     cursor: pointer;
     position: relative;
+    left: 27px;
 }
 .profile ul{
     width: 150px;
@@ -262,6 +263,7 @@ footer{
 .footer-social a:hover{
     background: #ffffff;
     color: black;
+    font-size: 30px;
 }
 .footer-container{
     display: flex;
@@ -277,7 +279,6 @@ footer{
 .footer-container h4{
     color: lightblue;
     border-bottom: 3px solid lightblue;
-    width: 35%;
 }
 .footer-copy{
     color: white;
@@ -313,6 +314,9 @@ footer{
 
 /* ..................MEDIA QUERY............. */
 @media (max-width:1024px){
+    .profile{
+        left: 16rem;
+    }
     h2{
         font-size: 1.6rem;
     }
@@ -429,7 +433,26 @@ footer{
 }
 
 
+@media (max-width:961px){
+    /* .profile{
+        left: 95px;
+    } */
+}
+
+
 @media (max-width:600px){
+    .logo h3{
+        font-size: 20px;
+        font-weight: 400;
+        text-shadow: .1rem .1rem rgb(211, 189, 168);
+    }
+    .logo h3 span{
+        margin: 15px 5px 0 -10px;
+        font-size: 40px;
+    }
+    .profile{
+        left: 75px;
+    }
     .featured-container{
         width: 90%;
         gap: 0.5rem;
@@ -461,9 +484,34 @@ footer{
         display: none;
     }
 }
-@media (max-width:360px){
+@media (max-width:400px){
     .post-container{
         grid-template-columns: 1fr;
         gap: 5rem;
+    }
+    .logo h3{
+        font-size: 20px;
+        font-weight: 400;
+        text-shadow: .1rem .1rem rgb(211, 189, 168);
+    }
+    .logo h3 span{
+        margin: 15px 5px 0 -10px;
+        font-size: 40px;
+    }
+    .profile{
+        left: 75px;
+    }
+}
+
+@media (max-width:320px){
+    .profile{
+        left: 45px;
+    }
+    .profile ul{
+        width: 100px;
+        font-size: 15px;
+    }
+    .profile ul li a{
+        font-size: 13px;
     }
 }
