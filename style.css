@@ -70,15 +70,15 @@ nav{
 }
 
 .logo h3{
-    font-size: 56px;
+    font-size: 40px;
     text-shadow: .2rem .2rem rgb(211, 189, 168);
-    font-weight: 600;
+    font-weight: 400;
     color: white;
 }
 .logo h3 span{
-    margin-right: 10px;
+    margin-right: 5px;
     color: #ffffff;
-    font-size: 5rem;
+    font-size: 3.6rem;
     text-shadow: none;
     transition: .3s ease-in;
 }
@@ -234,6 +234,9 @@ section{
     border-top: 2px solid purple;
     border-bottom: 2px solid purple;
     background: rgb(49, 203, 133);
+}
+.category-container i{
+    margin-right: 5px;
 }
 
 footer{
