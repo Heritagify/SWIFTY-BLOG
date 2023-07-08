@@ -174,7 +174,6 @@ section{
     background: #310666;
     color: rgb(193, 105, 193);
     padding: .5rem 1rem;
-    /* background-image: linear-gradient( rgb(4, 4, 32), rgb(96, 6, 6)); */
 
 }
 .category-btn:hover{
@@ -241,7 +240,8 @@ section{
 
 footer{
     background: #4a0c94;
-    padding-top: 5rem;
+    background: #630202;
+    padding-top: 4rem;
     box-shadow: inset 0 1.5rem 1.5rem #260651;
 }
 .footer-social{
@@ -285,15 +285,15 @@ footer{
 }
 .footer-copy{
     color: white;
-    padding: 1rem 0 1rem 0;
+    padding: .5rem 0 .7rem 0;
     border-top: 1px solid rgb(38, 161, 175);
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 
 /* >>>>>>For the blog>>>>>>>>>>>>> */
 .search-bar{
-    margin-top: 9rem;
+    margin-top: 8rem;
     margin-bottom: -150px;
 }
 .search-container{
@@ -336,11 +336,42 @@ footer{
 .btn:hover{
     opacity: 0.75;
 }
-/* .src i{
-    padding: 5px;
-} */
 
+/* >>>>>>>SINGLE POSTS>>>>>>> */
+.single-post{
+    margin: 8rem 0 2rem;
+}
+.single-post-container{
+    width: 40rem;
+    padding: 1rem 2rem 2rem;
+    background: burlywood;
+    background: #630202;
+}
+.single-post h5, .single-post h2{
+    color: white;
+}
+.single-post p{
+    color: aliceblue;
+    margin-top: 1rem;
+    line-height: 1.7;
+}
+.single-post-thumb{
+    margin-top: 1.5rem;
+}
 
+/* >>>>>>>Category ?>>>>>>*/
+.category-title{
+    height: 13rem;
+    /* margin-top: 5rem; */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #690404;
+}
+.category-title h2{
+    color: white;
+}
 
 
 
@@ -481,6 +512,15 @@ footer{
     .post-container .post-thumb{
         border: .5rem solid purple;
     }
+
+    /* >>>>>>>>>SINGLE POST>>>>>>> */
+    .single-post-container{
+        padding: 1.2rem;
+        width: 73%;
+    }
+    .single-post-thumb{
+        margin-top: 1rem;
+    }
 }
 
 
@@ -545,8 +585,18 @@ footer{
     #todaysDate{
         display: none;
     }
+    /* >>>>>>>>>SINGLE POST>>>>>>> */
+    .single-post-container{
+        padding: 1.2rem;
+        width: 93%;
+    }
+    .single-post-thumb{
+        margin-top: 1rem;
+    }
 }
-@media (max-width:400px){
+
+
+@media (max-width:430px){
     .post-container{
         grid-template-columns: 1fr;
         gap: 5rem;
@@ -562,6 +612,9 @@ footer{
     }
     .profile{
         left: 75px;
+    }
+    .search-bar{
+        margin-bottom: -180px;
     }
 }
 
