@@ -288,6 +288,54 @@ footer{
     margin-top: 3rem;
 }
 
+/* >>>>>>For the blog>>>>>>>>>>>>> */
+.search-bar{
+    margin-top: 9rem;
+    margin-bottom: -150px;
+}
+.search-container{
+    width: 35rem;
+    background: #260651;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    color: #960996;
+}
+.search-container div{
+    display: flex;
+    width: 100%;
+    margin-left: .7rem;
+    align-items: center;
+}
+.search-container input{
+    background: transparent;
+    padding: .5rem 0;
+    width: 100%;
+    margin-left: .7rem;
+    margin-right: .7rem;
+    color: white;
+}
+.search-container input::placeholder{
+    color: white;
+}
+.btn{
+    display: inline-block;
+    width: fit-content;
+    padding: .6rem 1.2rem;
+    cursor: pointer;
+    border-radius: 7px;
+    background: #6f12e9;
+    color: white;
+}
+.btn:hover{
+    opacity: 0.75;
+}
+/* .src i{
+    padding: 5px;
+} */
 
 
 
@@ -437,6 +485,14 @@ footer{
     /* .profile{
         left: 95px;
     } */
+    .search-container{
+        width: 60%;
+        padding: .2rem 1rem;
+    }
+    .btn{
+        
+    padding: .3rem .7rem;
+    }
 }
 
 
@@ -452,6 +508,9 @@ footer{
     }
     .profile{
         left: 75px;
+    }
+    .search-container{
+        width: 80%;
     }
     .featured-container{
         width: 90%;
