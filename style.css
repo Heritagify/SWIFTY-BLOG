@@ -180,7 +180,7 @@ section{
  color: #ffffff;
 }
 .post-thumb{
-    border: .8rem solid rgb(103, 14, 162);
+    border: .8rem solid #670ea2;
     border-radius: 5rem;
     overflow: hidden;
     margin-bottom: 1rem;
@@ -341,7 +341,7 @@ footer{
     margin: 8rem 0 2rem;
 }
 .single-post-container{
-    width: 40rem;
+    width: 60rem;
     padding: 1rem 2rem 2rem;
     background: burlywood;
     background: #630202;
