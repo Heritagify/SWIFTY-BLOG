@@ -240,9 +240,9 @@ section{
 
 footer{
     background: #4a0c94;
-    background: #630202;
-    padding-top: 4rem;
-    box-shadow: inset 0 1.5rem 1.5rem #260651;
+    background: #440202;
+    padding-top: 5rem;
+    box-shadow: inset 0 1.5rem 1.5rem #190101;
 }
 .footer-social{
     display: flex;
@@ -256,12 +256,11 @@ footer{
     background: #9871c8;
     border-radius: 50%;
     height: 2.3rem;
-    width: 2.3rem;
+    width: 2.4rem;
     font-size: 25px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    /* color: white; */
+    justify-content: center;
 }
 .footer-social a:hover{
     background: #ffffff;
@@ -371,6 +370,18 @@ footer{
 }
 .category-title h2{
     color: white;
+}
+
+
+
+/* >>>>>>FOR THE ABOUT PAGE>>>> */
+.empty-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 9rem;
+    height: 15rem;
 }
 
 
