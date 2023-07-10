@@ -536,9 +536,9 @@ footer{
 
 
 @media (max-width:961px){
-    /* .profile{
+    .profile{
         left: 95px;
-    } */
+    }
     .search-container{
         width: 60%;
         padding: .2rem 1rem;
@@ -548,7 +548,12 @@ footer{
     padding: .3rem .7rem;
     }
 }
+@media (max-width:800px){
+    .profile{
+        left: 190px;
+    }
 
+}
 
 @media (max-width:600px){
     .logo h3{
