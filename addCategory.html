@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="slider.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Swifty Blog</title>
+    <style>
+        input, textarea, select{
+                padding: 0.8rem 1.4rem;
+                border-radius: 5px;
+                resize: none;
+                background: #060634;
+                color: aliceblue;
+        }
+        form small{
+            color: #060634;
+        }
+        form small{
+                display: flex;
+                justify-content: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><h3><span><i class="fa-brands fa-swift"></i></span><em>SWIFTY </em></h3></a>
+            <ul class="nav-link">
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./blog.html">Category</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./signIn.html">SignIn</a></li>
+                <li>
+                </li>
+              </ul>
+              <div class="profile">
+                  <div class="profile-img">
+                      <img src="./Images/profile.jpg" alt="">
+              </div>
+                  <ul>
+                      <li><a href="">Dashboard</a></li>
+                      <li><a href="">LogOut</a></li>
+                  </ul>
+              </div>
+            <button class="phone-button open" id="Open"><i class="fa fa-bars"></i></button>
+            <button class="phone-button close" id="Close"><i class="fa fa-close"></i></button>
+        </div>
+    </nav>
+
+    <section class="form-section">
+        <div class="container form-section-container">
+            <h2 style="color: white;">Add Category</h2>
+            <div class="message-alert message-alert-success">
+                <p>This is a success message</p>
+            </div>
+            <form action="">
+                <input type="text" placeholder="Title">
+                <textarea name="" id="" rows="4" placeholder="Description"></textarea>
+                <button type="submit" id="btnn">Sign In</button>
+                <small class="">Don't have an account ?<a href="signUp.html">Sign Up</a></small>
+            </form>
+        </div>
+    </section>
+
+
+<!-- .......FOOTER -->
+<footer>
+    <div class="footer-social">
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-twitter"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+        <a href=""><i class="fa-brands fa-discord"></i></a>
+    </div>
+    <div class="container footer-container">
+        <article>
+                <h4>Categories</h4>
+                <ul>
+                    <li><a>Discovery</a></li>
+                    <li><a>Technology</a></li>
+                    <li><a>Automobiles</a></li>
+                    <li><a>Politics</a></li>
+                    <li><a>Marketing</a></li>
+                    <li><a>Sports</a></li>
+                    <li><a>Travels</a></li>
+                    <li><a>World</a></li>
+                    <li><a>Fashion</a></li>
+                </ul>
+        </article>
+        <article>
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="">Online Support</a></li>
+                    <li><a href="">Email</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+        </article>
+        <article>
+                <h4>Permalinks</h4>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Phone Number</a></li>
+                    <li><a href="">Social Support</a></li>
+                    <li><a href="">Location</a></li>
+                </ul>
+        </article>
+    </div>
+    <div class="footer-copy">
+      Copyright &copy; HERITAGIFY
+    </div>
+</footer>
+    
+</body>
+</html>
+<script src="script.js"></script>

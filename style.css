@@ -372,8 +372,6 @@ footer{
     color: white;
 }
 
-
-
 /* >>>>>>FOR THE ABOUT PAGE>>>> */
 .empty-page{
     display: flex;
@@ -385,8 +383,76 @@ footer{
 }
 
 
+/* >>>>>>>FOr the sign up page>>>>> */
+.form-section{
+    margin-top: 62px;
+    margin-bottom: 40px;
+    display: grid;
+    place-items: center;
+}
+.form-section-container{
+    width: 30rem;
+}
+.message-alert{
+    padding: .8rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+.message-alert-error{
+    background: #efa6a6;
 
+}
+.message-alert-success{
+    background: #91f291;
+}
+.form-section form{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+.form-control{
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+input, textarea, select{
+    padding: 0.8rem 1.4rem;
+    border-radius: 5px;
+    resize: none;
+    color: #060634;
+}
+#btnn{
+    display: inline-block;
+    width: 150px;
+    padding: .6rem 1.2rem;
+    border-radius: 18px;
+    background: #3333e5;
+}
+#btnn a{
+    color: aliceblue;
 
+}
+#btnn:hover{
+    width: 250px;
+    transition: .4s ease-in-out;
+}
+form small{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin-top: .8rem;
+    color: aliceblue;
+
+}
+form small a{
+    margin-left: 10px;
+    font-size: 15px;
+    color: #8a8ae8;
+}
+form small a:hover{
+    font-size: 20px;
+    color: #c2c2db;
+}
 
 
 
@@ -532,6 +598,9 @@ footer{
     .single-post-thumb{
         margin-top: 1rem;
     }
+    .form-section-container{
+        width: 90%;
+    }
 }
 
 
@@ -596,7 +665,6 @@ footer{
         margin-top: 5rem;
         background-color: #310666;
         padding: 10px;
-        /* background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
     }
     #todaysDate{
         display: none;
