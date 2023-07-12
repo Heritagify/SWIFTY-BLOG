@@ -421,19 +421,26 @@ input, textarea, select{
     resize: none;
     color: #060634;
 }
+.anc{
+}
 #btnn{
+    text-decoration: none;
+    text-align: center;
+    background: #3333e5;
     display: inline-block;
     width: 150px;
-    padding: .6rem 1.2rem;
+    /* padding: 10px 50px; */
+    cursor: pointer;
+    /* padding: .6rem 1.2rem; */
     border-radius: 18px;
-    background: #3333e5;
-}
-#btnn a{
     color: aliceblue;
 
 }
+/* #btnn a{
+
+} */
 #btnn:hover{
-    width: 250px;
+    width: 150px;
     transition: .4s ease-in-out;
 }
 form small{
