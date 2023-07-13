@@ -22,6 +22,20 @@
                 display: flex;
                 justify-content: none;
         }
+        .form-section h2{
+            margin-top: 40px;
+            margin-bottom: auto;
+            text-align: center;
+            font-size: 40px;
+        }
+        select{
+            color: white;
+        }
+        .check{
+            display: flex;
+            flex-direction: row;
+            gap: .5rem;
+        }
     </style>
 </head>
 <body>
@@ -50,15 +64,33 @@
         </div>
     </nav>
 
-    <section class="form-section">
+    <section class="form-section" enctype="multipart/form-data">
         <div class="container form-section-container">
-            <h2 style="color: white;">Add Post</h2>
+            <h2 style="color: #1f1fef;">Add Post</h2>
             <div class="message-alert message-alert-success">
                 <p>This is a success message</p>
             </div>
             <form action="">
                 <input type="text" placeholder="Title">
-                <textarea name="" id="" rows="4" placeholder="Description"></textarea>
+                <select>
+                    <option value="1">Politics</option>
+                    <option value="2">Education</option>
+                    <option value="3">Sports</option>
+                    <option value="4">Fashion</option>
+                    <option value="5">Travels</option>
+                    <option value="6">Automobiles</option>
+                    <option value="7">Technology</option>
+                    <option value="8">Marketing</option>
+                </select>
+                <div class="form-control check" id="check">
+                    <input type="checkbox" id="is-featured">
+                    <label for="is-featured" checked>Featured</label>
+                </div>
+                <div class="form-control">
+                    <label for="thumb" checked>Add Photos</label>
+                    <input type="file" id="is-thumb">
+                </div>
+                <textarea name="" id="" rows="10" placeholder="Body"></textarea>
                 <a id="btnn" href="">
                     Publish
                 </a>
