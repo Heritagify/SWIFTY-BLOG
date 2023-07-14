@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="slider.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Swifty Blog</title>
+  <!-- <style>
+     body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .blog-post {
+      background-color: #f4f4f4;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .blog-content {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .blog-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 4px;
+    } -->
+  </style>
+</head>
+<body>
+
+    <!-- <nav>
+        <div class="container nav-container">
+            <a href="home.html" class="logo"><h3><span><i class="fa-brands fa-swift"></i></span><em>SWIFTY </em></h3></a>
+            <ul class="nav-link">
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./blog.html">Category</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li>
+                </li>
+              </ul>
+              <div class="profile">
+                  <div class="profile-img">
+                      <img src="./Images/profile.jpg" alt="">
+              </div>
+                  <ul>
+                      <li><a href="">Dashboard</a></li>
+                      <li><a href="">LogOut</a></li>
+                  </ul>
+              </div>
+            <button class="phone-button open" id="Open"><i class="fa fa-bars"></i></button>
+            <button class="phone-button close" id="Close"><i class="fa fa-close"></i></button>
+        </div>
+    </nav> -->
+
+        <div class="con">
+            <div class="bp">
+                <h1>View Blog Post</h1>
+                <div id="blogPosts"></div>
+            </div>
+        </div>
+</body>
+</html>
+
+  <script>
+          // Function to retrieve blog posts from local storage and display them
+    function displayBlogPosts() {
+      const blogPostsContainer = document.getElementById('blogPosts');
+      blogPostsContainer.innerHTML = '';
+      
+      const blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+      
+      blogPosts.forEach(function(blogPost) {
+        const postContainer = document.createElement('div');
+        const postTitle = document.createElement('h2');
+        const postImage = document.createElement('img');
+        const postContent = document.createElement('p');
+        
+        postTitle.textContent = blogPost.title;
+        postImage.src = blogPost.imageSrc;
+        postContent.textContent = blogPost.content;
+        
+        postContainer.appendChild(postTitle);
+        postContainer.appendChild(postImage);
+        postContainer.appendChild(postContent);
+        
+        blogPostsContainer.appendChild(postContainer);
+      });
+    }
+
+    // Display initial blog posts
+    displayBlogPosts();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // document.addEventListener("DOMContentLoaded", function() {
+    //   const blogPostJson = localStorage.getItem("blogPost");
+
+    //   if (blogPostJson) {
+    //     const blogPost = JSON.parse(blogPostJson);
+
+    //     const blogPostDiv = document.getElementById("blogPost");
+    //     blogPostDiv.innerHTML = `
+    //       <h2>${blogPost.title}</h2>
+    //       <img src="${blogPost.image}"><img>
+    //       <p>${blogPost.content}</p>
+    //     `;
+    //   }
+    // });
+  </script>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>View Blog Post</title>
+</head>
+<body>
+  <h1>View Blog Post</h1>
+  <div id="blogPost"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const blogPostJson = localStorage.getItem("blogPost");
+
+      if (blogPostJson) {
+        const blogPost = JSON.parse(blogPostJson);
+
+        const blogPostDiv = document.getElementById("blogPost");
+        blogPostDiv.innerHTML = `
+          <h2>${blogPost.title}</h2>
+          <p>${blogPost.content}</p>
+          <button onclick="deleteBlogPost()">Delete</button>
+          <button onclick="loveBlogPost()">Love</button>
+        `;
+      }
+    });
+
+    function deleteBlogPost() {
+      localStorage.removeItem("blogPost");
+      location.reload(); // Refresh the page
+    }
+
+    function loveBlogPost() {
+      // Implement the desired action when the blog post is loved
+      alert("You loved this blog post!");
+    }
+  </script>
+</body>
+</html> -->

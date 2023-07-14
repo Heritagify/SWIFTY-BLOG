@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Page</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const form = document.getElementById("blogForm");
+      form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const title = document.getElementById("title").value;
+        const image = document.getElementById("title").value;
+        const content = document.getElementById("content").value;
+
+        // Create a blog post object
+        const blogPost = {
+          title: title,
+          image: image,
+          content: content
+        };
+
+        // Convert the object to JSON string
+        const blogPostJson = JSON.stringify(blogPost);
+
+        // Save the blog post in local storage
+        localStorage.setItem("blogPost", blogPostJson);
+
+        // Clear the form inputs
+        form.reset();
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Add a Blog Post</h1>
+  <form id="blogForm">
+    <label for="title">Title:</label>
+    <input type="text" id="title" required><br>
+    <label for="content">Content:</label>
+    <textarea id="content" required></textarea><br>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

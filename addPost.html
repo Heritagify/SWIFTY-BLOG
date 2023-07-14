@@ -70,8 +70,8 @@
             <div class="message-alert message-alert-success">
                 <p>This is a success message</p>
             </div>
-            <form action="">
-                <input type="text" placeholder="Title">
+            <form id="blogform">
+                <input type="text" id="title" placeholder="Title" required>
                 <select>
                     <option value="1">Politics</option>
                     <option value="2">Education</option>
@@ -88,13 +88,10 @@
                 </div>
                 <div class="form-control">
                     <label for="thumb" checked>Add Photos</label>
-                    <input type="file" id="is-thumb">
+                    <input type="file" accept="image/*" id="image">
                 </div>
-                <textarea name="" id="" rows="10" placeholder="Body"></textarea>
-                <a id="btnn" href="">
-                    Publish
-                </a>
-                
+                <textarea name="" id="content" rows="6" placeholder="Body"></textarea>
+                    <button type="submit" id="btnn">Create Blog Post</button>                
                 <small class="">Don't have an account ?<a href="index.html">Sign Up</a></small>
             </form>
         </div>
@@ -153,4 +150,96 @@
     
 </body>
 </html>
+<script>
+
+  // Function to save blog post to local storage
+  function saveBlogPost(title, imageSrc, content) {
+      const blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+      
+      const blogPost = {
+        title: title,
+        imageSrc: imageSrc,
+        content: content
+      };
+      
+      blogPosts.push(blogPost);
+      localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+    }
+
+// Function to convert image to Base64 string
+    function convertImageToBase64(image) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        
+        reader.onload = () => {
+          resolve(reader.result);
+        };
+        
+        reader.onerror = reject;
+        
+        reader.readAsDataURL(image);
+      });
+    }
+
+    
+    // Handle form submission
+    const form = document.getElementById('blogform');
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault();
+      
+      const title = document.getElementById('title').value;
+      const image = document.getElementById('image').files[0];
+      const content = document.getElementById('content').value;
+      
+      // Perform necessary processing (e.g., upload image)
+      const imageSrc = await convertImageToBase64(image);
+
+
+      // Save blog post to local storage
+      saveBlogPost(title, imageSrc, content);
+      
+      // Clear form fields
+      form.reset();
+      window.location.href = 'chatty.html';
+    });
+
+
+
+
+
+    // const form = document.getElementById("blogform");
+
+    // document.addEventListener("DOMContentLoaded", function() {
+    //   form.addEventListener("submit", function(e) {
+    //     e.preventDefault(); // Prevent form submission
+
+    //     const title = document.getElementById("title").value;
+    //     const image =document.getElementById("is-thumb").files[0];
+    //     const content = document.getElementById("content").value;
+
+    //     // Create a blog post object
+    //     const blogPost=  {
+    //             title: title,
+    //             image: image,
+    //             content: content
+    //         }
+    //    console.log(blogPost.image)
+    //         function errand(task){
+    //             blogPost.push(task);
+    //         }
+    //     // Convert the object to JSON string
+    //     const blogPostJson = JSON.stringify(blogPost);
+
+    //     // Save the blog post in local storage
+    //     localStorage.setItem("blogPost", blogPostJson);
+
+    //     // Clear the form inputs
+    //     form.reset();
+    //   });
+    // });
+
+    
+   
+
+</script>
 <script src="script.js"></script>

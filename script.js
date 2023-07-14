@@ -16,7 +16,7 @@ document.getElementById("Close").addEventListener("click", ()=> {
 // >>>>>>>FOR THE DATE>>>>>>>>>>>>>>
 const d = new Date();
 let text = d.toLocaleDateString();
-document.getElementById("todaysDate").innerHTML = text;
+document.getElementById("todaysDate").innerText= text;
 
 
 
