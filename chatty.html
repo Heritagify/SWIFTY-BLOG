@@ -10,145 +10,95 @@
   <style>
      body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
     }
 
     h1 {
       text-align: center;
     }
-
-    .blog-post {
-      background-color: #f4f4f4;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .blog-title {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .blog-content {
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-
-    .blog-image {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 4px;
-    }
+    .single-post-container{
+    color: aliceblue;
+    margin-top: 1rem;
+    line-height: 1.7;
+}
+.post-body{
+  color: aliceblue;
+    margin-top: 1rem;
+    line-height: 1.7;
+}
   </style>
 </head>
 <body>
-
-    <!-- <nav>
-        <div class="container nav-container">
-            <a href="home.html" class="logo"><h3><span><i class="fa-brands fa-swift"></i></span><em>SWIFTY </em></h3></a>
-            <ul class="nav-link">
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./blog.html">Category</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-                <li>
-                </li>
+  <nav>
+    <div class="container nav-container">
+        <a href="home.html" class="logo"><h3><span><i class="fa-brands fa-swift"></i></span><em>SWIFTY </em></h3></a>
+        <ul class="nav-link">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./blog.html">Category</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./signIn.html">SignIn</a></li>
+            <li>
+            </li>
+          </ul>
+          <div class="profile">
+              <div class="profile-img">
+                  <img src="./Images/profile.jpg" alt="">
+          </div>
+              <ul>
+                  <li><a href="">Dashboard</a></li>
+                  <li><a href="">LogOut</a></li>
               </ul>
-              <div class="profile">
-                  <div class="profile-img">
-                      <img src="./Images/profile.jpg" alt="">
-              </div>
-                  <ul>
-                      <li><a href="">Dashboard</a></li>
-                      <li><a href="">LogOut</a></li>
-                  </ul>
-              </div>
-            <button class="phone-button open" id="Open"><i class="fa fa-bars"></i></button>
-            <button class="phone-button close" id="Close"><i class="fa fa-close"></i></button>
-        </div>
-    </nav> -->
+          </div>
+        <button class="phone-button open" id="Open"><i class="fa fa-bars"></i></button>
+        <button class="phone-button close" id="Close"><i class="fa fa-close"></i></button>
+    </div>
+</nav>
 
-        <div class="con">
-            <div class="bp">
-                <h1>View Blog Post</h1>
-                <div id="blogPosts"></div>
-            </div>
-        </div>
+<h1>View Blog Post</h1>
+        <section class="single-post">
+          
+                  <div id="blogPosts"></div>
+        </section>
 </body>
 </html>
 
   <script>
-          // Function to retrieve blog posts from local storage and display them
-    function displayBlogPosts() {
-      const blogPostsContainer = document.getElementById('blogPosts');
-      blogPostsContainer.innerHTML = '';
-      
-      const blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
-      
-      blogPosts.forEach(function(blogPost) {
-        const postContainer = document.createElement('div');
-        const postTitle = document.createElement('h2');
-        const postImage = document.createElement('img');
-        const postContent = document.createElement('p');
-        
-        postTitle.textContent = blogPost.title;
-        postImage.src = blogPost.imageSrc;
-        postContent.textContent = blogPost.content;
-        
-        postContainer.appendChild(postTitle);
-        postContainer.appendChild(postImage);
-        postContainer.appendChild(postContent);
-        
-        blogPostsContainer.appendChild(postContainer);
-      });
-    }
 
-    // Display initial blog posts
-    displayBlogPosts();
+// Function to retrieve blog posts from local storage and display them
+        function displayBlogPosts() {
+          const blogPostsContainer = document.getElementById('blogPosts');
+          blogPostsContainer.innerHTML = '';
+          
+          const blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+          
+          blogPosts.forEach(function(blogPost) {
+                const postContainer = document.createElement('div');
+                postContainer.classList.add('single-post-container');
+                
+                const postTitle = document.createElement('h2');
+                postTitle.classList.add('post-title');
+                postTitle.textContent=blogPost.title;
 
+                const postImage = document.createElement('img');
+                postImage.classList.add('single-post-thumb');
+                postImage.src = blogPost.imageSrc;
 
+                const postContent = document.createElement('p');
+                postContent.classList.add('post-body')
+                postContent.textContent = blogPost.content;
+                
+                postContainer.appendChild(postTitle);
+                postContainer.appendChild(postImage);
+                postContainer.appendChild(postContent);
+                
+                blogPostsContainer.appendChild(postContainer);
+          });
+        }
 
+       // Display initial blog posts
+            displayBlogPosts();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // document.addEventListener("DOMContentLoaded", function() {
-    //   const blogPostJson = localStorage.getItem("blogPost");
-
-    //   if (blogPostJson) {
-    //     const blogPost = JSON.parse(blogPostJson);
-
-    //     const blogPostDiv = document.getElementById("blogPost");
-    //     blogPostDiv.innerHTML = `
-    //       <h2>${blogPost.title}</h2>
-    //       <img src="${blogPost.image}"><img>
-    //       <p>${blogPost.content}</p>
-    //     `;
-    //   }
-    // });
   </script>
 
 
