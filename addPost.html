@@ -153,13 +153,13 @@
 <script>
 
   // Function to save blog post to local storage
-  function saveBlogPost(title, imageSrc, content) {
+  function saveBlogPost(title, content, imageSrc) {
       const blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
       
       const blogPost = {
         title: title,
-        imageSrc: imageSrc,
-        content: content
+        content: content,
+        imageSrc: imageSrc
       };
       
       blogPosts.push(blogPost);
@@ -187,8 +187,8 @@
     form.addEventListener('submit', async function(event) {
       event.preventDefault();
       
-      const title = document.getElementById('title').value;
       const image = document.getElementById('image').files[0];
+      const title = document.getElementById('title').value;
       const content = document.getElementById('content').value;
       
       // Perform necessary processing (e.g., upload image)
@@ -196,7 +196,7 @@
 
 
       // Save blog post to local storage
-      saveBlogPost(title, imageSrc, content);
+      saveBlogPost(title,content, imageSrc);
       
       // Clear form fields
       form.reset();

@@ -7,25 +7,46 @@
         <link rel="stylesheet" href="slider.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Swifty Blog</title>
-  <style>
-     body {
-      font-family: Arial, sans-serif;
-    }
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #060634;
+      }
 
-    h1 {
-      text-align: center;
-    }
-    .single-post-container{
-    color: aliceblue;
-    margin-top: 1rem;
-    line-height: 1.7;
-}
-.post-body{
-  color: aliceblue;
-    margin-top: 1rem;
-    line-height: 1.7;
-}
-  </style>
+      h1 {
+        text-align: center;
+        margin-top: 80px;
+        color: aliceblue;
+        box-shadow: 1px 2px 15px solid brown;
+      }
+      .single-post{
+          margin: 2rem 0 2rem;
+      }
+      .single-post-thumb{
+          margin-top: 1.5rem;
+          height: 160px;
+          border-top-left-radius: 40px;
+          border-bottom-right-radius: 40px;
+          border: .5rem solid purple;
+      }
+
+      .single-post-container{
+        width: 20rem;
+        padding: 1rem 2rem 2rem;
+        background: #630202;
+        border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .post-body{
+          width: 16rem;
+          color: aliceblue;
+          font-size: 16px;
+          margin-top: 1rem;
+          line-height: 1.7;
+          word-wrap: break-word;
+      }
+    </style>
 </head>
 <body>
   <nav>
@@ -55,11 +76,62 @@
     </div>
 </nav>
 
-<h1>View Blog Post</h1>
+<h1>View Blog Posts</h1>
         <section class="single-post">
           
-                  <div id="blogPosts"></div>
+                  <div class="container">
+                    <div id="blogPosts"></div>
+                  </div>
         </section>
+
+        <footer>
+          <div class="footer-social">
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+              <a href=""><i class="fa-brands fa-instagram"></i></a>
+              <a href=""><i class="fa-brands fa-linkedin"></i></a>
+              <a href=""><i class="fa-brands fa-discord"></i></a>
+          </div>
+          <div class="container footer-container">
+              <article>
+                      <h4>Categories</h4>
+                      <ul>
+                          <li><a>Discovery</a></li>
+                          <li><a>Technology</a></li>
+                          <li><a>Automobiles</a></li>
+                          <li><a>Politics</a></li>
+                          <li><a>Marketing</a></li>
+                          <li><a>Sports</a></li>
+                          <li><a>Travels</a></li>
+                          <li><a>World</a></li>
+                          <li><a>Fashion</a></li>
+                      </ul>
+              </article>
+              <article>
+                      <h4>Support</h4>
+                      <ul>
+                          <li><a href="">Online Support</a></li>
+                          <li><a href="">Email</a></li>
+                          <li><a href="">Services</a></li>
+                          <li><a href="">Blog</a></li>
+                          <li><a href="">Contact</a></li>
+                      </ul>
+              </article>
+              <article>
+                      <h4>Permalinks</h4>
+                      <ul>
+                          <li><a href="">Home</a></li>
+                          <li><a href="">About</a></li>
+                          <li><a href="">Phone Number</a></li>
+                          <li><a href="">Social Support</a></li>
+                          <li><a href="">Location</a></li>
+                      </ul>
+              </article>
+          </div>
+          <div class="footer-copy">
+            Copyright &copy; HERITAGIFY
+          </div>
+    </footer>
 </body>
 </html>
 
@@ -76,13 +148,14 @@
                 const postContainer = document.createElement('div');
                 postContainer.classList.add('single-post-container');
                 
+                const postImage = document.createElement('img');
+                postImage.classList.add('single-post-thumb');
+                postImage.src = blogPost.imageSrc;
+
                 const postTitle = document.createElement('h2');
                 postTitle.classList.add('post-title');
                 postTitle.textContent=blogPost.title;
 
-                const postImage = document.createElement('img');
-                postImage.classList.add('single-post-thumb');
-                postImage.src = blogPost.imageSrc;
 
                 const postContent = document.createElement('p');
                 postContent.classList.add('post-body')
