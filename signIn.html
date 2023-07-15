@@ -19,25 +19,22 @@
 <body>
   
 
-    <section class="form-section">
+    <section class="form-section" id="login-form">
         <div class="container form-section-container">
             <h2 style="color: white;">Sign In</h2>
             <div class="message-alert message-alert-success">
                 <p>This is a success message</p>
             </div>
             <form action="">
-                <input type="text" placeholder="Username or Email" required>
-                <input type="text" placeholder="Password" required>
-                <a href="home.html" id="btnn">
-                  Sign In
-                </a>
-                <!-- <button id="btnn" onclick="window.location.href='home.html';">
-                    Sign In
-                </button> -->
+                <input type="text" id="login-username" placeholder="Username or Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <label for="show-password">Show Password</label>
+                <input type="checkbox" id="show-password">
+                <button type="submit" id="btnn">Sign In</button>
                 <small class="">Don't have an account ?<a href="index.html">Sign Up</a></small>
             </form>
         </div>
     </section>
 </body>
 </html>
-<script src="script.js"></script>
+<script src="signIn.js"></script>

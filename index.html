@@ -12,12 +12,18 @@
             background: #060634;
         }
         .form-section{
-            margin-top: -6px;
+            margin-top: 30px;
+        }
+        .date_marquee{
+            top: -85px;
         }
     </style>
 </head>
 <body>
-
+    <div class="date_marquee">
+        <div id="todaysDate"></div>
+        <marquee behavior="" direction="">Welcome To SWIFTY, a place to get valuable informations</marquee>
+      </div>
 
     <section class="form-section">
         <div class="container form-section-container">
@@ -25,11 +31,11 @@
             <div class="message-alert message-alert-error">
                 <p>This is an error message</p>
             </div>
-            <form action="">
+            <form action="" id="signup-form">
                 <input type="text" placeholder="First Name" required>
                 <input type="text" placeholder="Last Name" required>
-                <input type="text" placeholder="Email" required>
-                <input type="text" placeholder="Desired Username" required>
+                <input type="text" id="signup-email" placeholder="Email" required>
+                <input type="text" id="signup-username" placeholder="Desired Username" required>
                 <select style="background: rgb(23, 14, 150); color: aliceblue;">
                     <option value="nationality" selected disabled>Nationality</option>
                     <option value="">Nigeria</option>
@@ -41,15 +47,13 @@
                     <option value="">Frankfurt</option>
                     <option value="">Singapore</option>
                 </select>
-                <input type="text" placeholder="Password" required>
-                <input type="text" placeholder="Confirm Password" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" id="signup-password" placeholder="Confirm Password" required>
                 <div class="form-control">
                     <label style="color: aliceblue;" for="profile-img">Upload Profile Image</label>
                     <input style="background-color: white;" type="file" id="upload-img">
                 </div>
-                <a href="signIn.html" id="btnn">
-                    Sign Up
-                </a>
+                <button type="submit" id="btnn">Sign Up</button>
                 <!-- <button  type="submit" id="btnn"><a href="signIn.html">Sign Up</a></button> -->
                 <small class="">Already have an account ?  <a href="signIn.html">Sign In</a></small>
             </form>
@@ -59,3 +63,4 @@
 </body>
 </html>
 <script src="script.js"></script>
+<script src="signUp.js"></script>
