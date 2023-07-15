@@ -373,12 +373,27 @@ footer{
 
 /* >>>>>>FOR THE ABOUT PAGE>>>> */
 .empty-page{
-    display: flex;
+    width: 50rem;
+    gap: 5rem;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
+    margin: 7rem 22%;
+    background: rgb(1, 1, 21);
+}
+.empty-page h5{
+    color: aliceblue;
+    font-size: 19px;
+
+}
+.empty-page h2{
+    color: aliceblue;
+    font-size: 39px;
     text-align: center;
-    margin-top: 9rem;
-    height: 15rem;
+
+}
+.abt{
+    border: 3px solid green;
 }
 
 
