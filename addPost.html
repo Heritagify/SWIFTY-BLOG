@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="slider.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Swifty Blog</title>
+    <title>ADD POST</title>
     <style>
         input, textarea, select{
                 padding: 0.8rem 1.4rem;
@@ -72,15 +72,16 @@
             </div>
             <form id="blogform">
                 <input type="text" id="title" placeholder="Title" required>
-                <select>
-                    <option value="1">Politics</option>
-                    <option value="2">Education</option>
-                    <option value="3">Sports</option>
-                    <option value="4">Fashion</option>
-                    <option value="5">Travels</option>
-                    <option value="6">Automobiles</option>
-                    <option value="7">Technology</option>
-                    <option value="8">Marketing</option>
+                <select id="select1" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="Politics">Politics</option>
+                    <option value="Education">Education</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Fashion">Fashion</option>
+                    <option value="Travels">Travels</option>
+                    <option value="Automobiles">Automobiles</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Marketing">Marketing</option>
                 </select>
                 <div class="form-control check" id="check">
                     <input type="checkbox" id="is-featured">
@@ -153,13 +154,14 @@
 <script>
 
   // Function to save blog post to local storage
-  function saveBlogPost(title, content, imageSrc) {
+  function saveBlogPost(title, content, imageSrc, category) {
       const blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
       
       const blogPost = {
         title: title,
         content: content,
-        imageSrc: imageSrc
+        imageSrc: imageSrc,
+        category: category
       };
       
       blogPosts.push(blogPost);
@@ -188,6 +190,7 @@
       event.preventDefault();
       
       const image = document.getElementById('image').files[0];
+      const category = document.getElementById('select1').value;
       const title = document.getElementById('title').value;
       const content = document.getElementById('content').value;
       
@@ -196,7 +199,7 @@
 
 
       // Save blog post to local storage
-      saveBlogPost(title,content, imageSrc);
+      saveBlogPost(title,content,imageSrc,category);
       
       // Clear form fields
       form.reset();

@@ -19,6 +19,14 @@
         color: aliceblue;
         box-shadow: 1px 2px 15px solid brown;
       }
+      .post-title{
+        color: aliceblue !important;
+        font-size: 40px;
+        text-transform: uppercase;
+        line-height: normal;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+      }
       .single-post{
           margin: 2rem 0 2rem;
       }
@@ -152,6 +160,10 @@
                 postImage.classList.add('single-post-thumb');
                 postImage.src = blogPost.imageSrc;
 
+                const selectOption = document.createElement('div');
+                selectOption.classList.add('category-btn');
+                selectOption.textContent = `${blogPost.category}`;
+
                 const postTitle = document.createElement('h2');
                 postTitle.classList.add('post-title');
                 postTitle.textContent=blogPost.title;
@@ -163,6 +175,7 @@
                 
                 postContainer.appendChild(postTitle);
                 postContainer.appendChild(postImage);
+                postContainer.appendChild(selectOption);
                 postContainer.appendChild(postContent);
                 
                 blogPostsContainer.appendChild(postContainer);
