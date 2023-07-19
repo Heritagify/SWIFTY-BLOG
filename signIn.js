@@ -1,4 +1,3 @@
-// alert("gbemidebe")
 // Function to handle login form submission
 function login(e) {
     e.preventDefault(); // Prevent form submission
@@ -16,7 +15,8 @@ function login(e) {
     if (
         (usernameOrEmail === storedUsername || usernameOrEmail ===storedEmail) && password === storedPassword) {
       confirm('Login successful!');
-      window.location.href = 'home.html';
+      
+      window.location.href = 'dashboard.html';
     } else {
       alert('Invalid username or password!');
     }

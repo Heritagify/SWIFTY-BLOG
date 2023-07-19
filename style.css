@@ -335,6 +335,12 @@ footer{
 .btn:hover{
     opacity: 0.75;
 }
+.sm{
+    padding: .4rem .7rem;
+}
+.del{
+    background: rgb(234, 28, 28);
+}
 
 /* >>>>>>>SINGLE POSTS>>>>>>> */
 .single-post{
@@ -471,6 +477,25 @@ form small a:hover{
 }
 
 
+/* >>>>>>>>>>>>>>>>DASHBOARD */
+
+.dashboard{
+    margin-top: 6rem;
+}
+.dashboard-container{
+    display: grid;
+    grid-template-columns: 14rem auto;
+    padding: 2rem;
+    margin-bottom: 7rem;
+    gap: 1rem;
+    background: #1e0873;
+    color: white;
+}
+.dashboard-container a, .dashboard-container h5{
+    color: whitesmoke;
+}
+
+
 
 
 
@@ -590,7 +615,7 @@ form small a:hover{
         gap: 1rem;
         width: 80%;
     }
-    .featured-container .post-thumb{
+    .featured-container     {
         width: 70%;
         margin: 0 auto;
     }
