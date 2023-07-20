@@ -488,11 +488,26 @@ form small a:hover{
     padding: 2rem;
     margin-bottom: 7rem;
     gap: 1rem;
-    background: #1e0873;
+    background: #0c0330;
     color: white;
 }
-.dashboard-container a, .dashboard-container h5{
+.dashboard-container a, .dashboard-container h5, h2{
     color: whitesmoke;
+}
+.dashboard aside a{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem;
+    background: #0e359f;
+    border-bottom: 1px solid #0c0330;
+}
+.dashboard aside ul li:last-child a{
+    border-bottom: none;
+}
+.dashboard aside a:hover{
+    background: transparent;
+    opacity: 1;
 }
 
 

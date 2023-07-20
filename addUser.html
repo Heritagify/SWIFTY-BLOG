@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <!-- Add your CSS stylesheets here -->
+</head>
+<body>
+    <h1>Add User Page</h1>
+
+    <form id="addUserForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <button type="submit">Add User</button>
+    </form>
+
+    <script>
+        // Retrieve user data from local storage or initialize an empty array
+        var userData = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
+
+        function addUser(event) {
+            event.preventDefault(); // Prevent form submission
+            var addUserForm = document.querySelector('#addUserForm');
+            var nameInput = document.querySelector('#name');
+            var emailInput = document.querySelector('#email');
+
+            // Get the user data from the form inputs
+            var name = nameInput.value;
+            var email = emailInput.value;
+
+            // Generate a unique user ID (you can modify this logic as per your requirements)
+            var userId = Date.now().toString();
+
+            // Create a new user object
+            var newUser = {
+                id: userId,
+                name: name,
+                email: email
+            };
+
+            // Add the new user to the userData array
+            userData.push(newUser);
+
+            // Update local storage with the updated user data
+            localStorage.setItem('users', JSON.stringify(userData));
+
+            // Reset the form inputs
+            addUserForm.reset();
+
+            // Optionally, you can display a success message or perform other actions
+            alert('User added successfully!');
+        }
+
+        var addUserForm = document.querySelector('#addUserForm');
+        addUserForm.addEventListener('submit', addUser);
+    </script>
+</body>
+</html>

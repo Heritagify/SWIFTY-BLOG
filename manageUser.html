@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage User</title>
+    <!-- Add your CSS stylesheets here -->
+</head>
+<body>
+    <h1>Manage User Page</h1>
+
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table rows will be populated dynamically -->
+        </tbody>
+    </table>
+
+    <!-- Add your JavaScript code here -->
+    <script>
+        // Retrieve user data from local storage or initialize an empty array
+        var userData = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
+
+        function renderUserTable() {
+            var userTableBody = document.querySelector('#userTable tbody');
+
+            // Clear existing table rows
+            userTableBody.innerHTML = '';
+
+            // Render table rows with user data
+            userData.forEach(function(user) {
+                var row = document.createElement('tr');
+                row.setAttribute('data-user-id', user.id);
+
+                var userIdCell = document.createElement('td');
+                userIdCell.textContent = user.id;
+                row.appendChild(userIdCell);
+
+                var nameCell = document.createElement('td');
+                nameCell.textContent = user.name;
+                row.appendChild(nameCell);
+
+                var emailCell = document.createElement('td');
+                emailCell.textContent = user.email;
+                row.appendChild(emailCell);
+
+                var actionsCell = document.createElement('td');
+                var editButton = document.createElement('button');
+                editButton.textContent = 'Edit';
+                editButton.addEventListener('click', function() {
+                    editUser(user.id);
+                });
+                actionsCell.appendChild(editButton);
+
+                var deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', function() {
+                    deleteUser(user.id);
+                });
+                actionsCell.appendChild(deleteButton);
+
+                row.appendChild(actionsCell);
+
+                userTableBody.appendChild(row);
+            });
+        }
+
+        function editUser(userId) {
+            // Perform action for editing user with the given userId
+            console.log('Edit User:', userId);
+            // Redirect to the edit user page with the userId as a parameter
+            window.location.href = 'editUser.html?userId=' + userId;
+        }
+
+        function deleteUser(userId) {
+            // Perform action for deleting user with the given userId
+            console.log('Delete User:', userId);
+            // Confirm deletion
+            if (confirm('Are you sure you want to delete this user?')) {
+                // Delete the user from userData array
+                var updatedUserData = userData.filter(function(user) {
+                    return user.id !== userId;
+                });
+
+                // Update local storage and re-render the table
+                localStorage.setItem('users', JSON.stringify(updatedUserData));
+                userData = updatedUserData;
+                renderUserTable();
+            }
+        }
+
+        // Render the initial table on page load
+        renderUserTable();
+    </script>
+</body>
+</html>
