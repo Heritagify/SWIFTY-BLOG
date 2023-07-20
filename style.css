@@ -171,20 +171,26 @@ section{
 }
 .category-btn{
     display: inline;
-    background: #310666;
     color: rgb(193, 105, 193);
+    background: #310666;
     padding: .5rem 1rem;
-
+    transition: .4s ease-in-out;
 }
 .category-btn:hover{
  color: #ffffff;
+ background: #0a0115;
+ transform: scale(1.05);
 }
 .post-thumb{
-    border: .8rem solid #670ea2;
+    border: .6rem solid #670ea2;
     border-radius: 5rem;
     overflow: hidden;
     margin-bottom: 1rem;
     object-fit: cover;
+    transition: .4s ease-in-out;
+}
+.post-thumb:hover{
+    transform: scale(1.05);
 }
 .post-profile{
     display: flex;
@@ -265,7 +271,7 @@ footer{
 .footer-social a:hover{
     background: #ffffff;
     color: black;
-    font-size: 30px;
+    transform: scale(1.05);
 }
 .footer-container{
     display: flex;
