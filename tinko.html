@@ -3,27 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="slider.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Add User</title>
     <style>
-        body{
-            background: #060634;
-        }
-        .form-section{
-            margin-top: 30px;
-        }
-        .date_marquee{
-            top: -85px;
-        }
-        .auser{
-            margin-top: 6rem;
-        }
+        /* Your custom styles go here */
     </style>
 </head>
 <body>
-    <nav>
+
+     <nav>
         <div class="container nav-container">
             <a href="home.html" class="logo"><h3><span><i class="fa-brands fa-swift"></i></span><em>SWIFTY </em></h3></a>
             <ul class="nav-link">
@@ -48,23 +35,13 @@
         </div>
     </nav>
 
-
-
-
-
-
-    <div class="date_marquee">
-        <div id="todaysDate"></div>
-        <marquee behavior="" direction="">Welcome To SWIFTY, a place to get valuable informations</marquee>
-      </div>
-
     <section class="form-section auser">
         <div class="container form-section-container">
             <h2 style="color: white;">Add User</h2>
             <form action="" enctype="" id="addUserForm">
                 <input type="text" id="email" placeholder="Email" required>
                 <input type="text" id="name" placeholder="Desired Username" required>
-                <select style="background: rgb(23, 14, 150); color: aliceblue;">
+                <select style="background: rgb(23, 14, 150); color: aliceblue;" id="userRole">
                     <option value="admin">Admin</option>
                     <option value="author">Author</option>
                 </select>
@@ -76,54 +53,53 @@
                 </div>
                 <button type="submit" id="btnn">Add User</button>
                 <!-- <button  type="submit" id="btnn"><a href="signIn.html">Sign Up</a></button> -->
-                <small class="">Already have an account ?  <a href="signIn.html">Sign In</a></small>
+                <small class="">Already have an account? <a href="signIn.html">Sign In</a></small>
             </form>
         </div>
     </section>
 
+    <script>
+        // Retrieve user data from local storage or initialize an empty array
+        var userData = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
 
-   
+        function addUser(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form input values
+            var email = document.getElementById('email').value;
+            var name = document.getElementById('name').value;
+            var role = document.getElementById('userRole').value;
+            var password = document.getElementById('signup-password').value;
+
+            // You can add validation checks here before adding the user
+
+            // Generate a unique user ID (you can modify this logic as per your requirements)
+            var userId = Date.now().toString();
+
+            // Create a new user object
+            var newUser = {
+                id: userId,
+                email: email,
+                name: name,
+                role: role,
+                password: password
+            };
+
+            // Add the new user to the userData array
+            userData.push(newUser);
+
+            // Update local storage with the updated user data
+            localStorage.setItem('users', JSON.stringify(userData));
+
+            // Reset the form inputs
+            document.getElementById('addUserForm').reset();
+
+            // Optionally, you can display a success message or perform other actions
+            alert('User added successfully!');
+        }
+
+        // Add event listener to the form submit button
+        document.getElementById('btnn').addEventListener('click', addUser);
+    </script>
 </body>
 </html>
-<script src="script.js"></script>
-
-<script>
-    // Retrieve user data from local storage or initialize an empty array
-    var userData = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
-
-    function addUser(event) {
-        event.preventDefault(); // Prevent form submission
-        var addUserForm = document.querySelector('#addUserForm');
-        var nameInput = document.querySelector('#name');
-        var emailInput = document.querySelector('#email');
-
-        // Get the user data from the form inputs
-        var name = nameInput.value;
-        var email = emailInput.value;
-
-        // Generate a unique user ID (you can modify this logic as per your requirements)
-        var userId = Date.now().toString();
-
-        // Create a new user object
-        var newUser = {
-            id: userId,
-            name: name,
-            email: email
-        };
-
-        // Add the new user to the userData array
-        userData.push(newUser);
-
-        // Update local storage with the updated user data
-        localStorage.setItem('users', JSON.stringify(userData));
-
-        // Reset the form inputs
-        addUserForm.reset();
-
-        // Optionally, you can display a success message or perform other actions
-        alert('User added successfully!');
-    }
-
-    var addUserForm = document.querySelector('#addUserForm');
-    addUserForm.addEventListener('submit', addUser);
-</script>
