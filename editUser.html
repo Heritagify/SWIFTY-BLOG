@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Edit User</title>
+    <style>
+        body{
+            background: #0c0330;
+        }
+        #editUserRole{
+            color: aliceblue;
+            background: rgb(23, 14, 150);
+        }
+        #editUserBtn{
+            padding: 1rem 0;
+            border-radius: 30px;
+            font-size: larger;
+            font-weight: 600;
+            color: #0c0330;
+        }
+        #editUserBtn:hover{
+            color: white;
+            background: #0c0330;
+            border: 5px solid white;
+        }
+        section .container{
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="home.html" class="logo"><h3><span><i class="fa-brands fa-swift"></i></span><em>SWIFTY </em></h3></a>
+            <ul class="nav-link">
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./blog.html">Category</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li>
+                </li>
+              </ul>
+              <div class="profile">
+                  <div class="profile-img">
+                      <img src="./Images/profile.jpg" alt="">
+              </div>
+                  <ul>
+                      <li><a href="">Dashboard</a></li>
+                      <li><a href="signIn.html">LogOut</a></li>
+                  </ul>
+              </div>
+            <button class="phone-button open" id="Open"><i class="fa fa-bars"></i></button>
+            <button class="phone-button close" id="Close"><i class="fa fa-close"></i></button>
+        </div>
+    </nav>
+
+    <!-- Your date marquee code goes here -->
+
+    <section class="form-section auser">
+        <div class="container form-section-container">
+            <h2 style="color: white;">Edit User</h2>
+            <form action="" enctype="" id="editUserForm">
+                <input type="hidden" id="userId">
+                <input type="text" id="editEmail" placeholder="Email" required>
+                <input type="text" id="editName" placeholder="Username" required>
+                <select id="editUserRole">
+                    <option value="admin">Admin</option>
+                    <option value="author">Author</option>
+                </select>
+                <input type="password" id="editPassword" placeholder="New Password">
+                <button type="submit" id="editUserBtn">Update User</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Retrieve user data from local storage or initialize an empty array
+        var userData = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
+
+        function getQueryParam(param) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        function fillFormWithUserData(userId) {
+            var user = userData.find(function(user) {
+                return user.id === userId;
+            });
+
+            if (user) {
+                document.getElementById('userId').value = user.id;
+                document.getElementById('editEmail').value = user.email;
+                document.getElementById('editName').value = user.name;
+                document.getElementById('editUserRole').value = user.role;
+            }
+        }
+
+        function editUser(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form input values
+            var userId = document.getElementById('userId').value;
+            var email = document.getElementById('editEmail').value;
+            var name = document.getElementById('editName').value;
+            var role = document.getElementById('editUserRole').value;
+            var newPassword = document.getElementById('editPassword').value;
+
+            // Find the user in the userData array
+            var userIndex = userData.findIndex(function(user) {
+                return user.id === userId;
+            });
+
+            if (userIndex !== -1) {
+                // Update user data
+                userData[userIndex].email = email;
+                userData[userIndex].name = name;
+                userData[userIndex].role = role;
+                if (newPassword !== '') {
+                    userData[userIndex].password = newPassword;
+                }
+
+                // Update local storage with the updated user data
+                localStorage.setItem('users', JSON.stringify(userData));
+
+                // Optionally, you can display a success message or perform other actions
+                alert('User updated successfully!');
+            } else {
+                alert('User not found!');
+            }
+        }
+
+        // Get the userId from the URL query parameters
+        var userId = getQueryParam('userId');
+
+        // Fill the edit user form with the user data
+        fillFormWithUserData(userId);
+
+        // Add event listener to the form submit button
+        document.getElementById('editUserBtn').addEventListener('click', editUser);
+    </script>
+</body>
+</html>

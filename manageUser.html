@@ -3,27 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Manage User</title>
-    <!-- Add your CSS stylesheets here -->
+    <style>
+        body{
+            background: #0c0330;
+        }
+        th{
+            background: white;
+        }
+        td{
+            color: aliceblue;
+            text-align: center;
+        }
+        #userTable{
+            border: 2px solid white;
+            width: 100%;
+        }
+        section{
+            background: 5px solid white;
+        }
+        tbody button{
+            background-color: rgb(247, 4, 4);
+            border: 2px solid white;
+            gap: 10px;
+            padding: 0 1rem 0 1rem;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        tbody editBtn{
+            padding: 0 1rem 0 1rem;
+            background: #abdbe5;
+            color: #0c0330;
+            cursor: pointer;
+        }
+        td:last-child{
+            /* background-color: green; */
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Manage User Page</h1>
+    
+    <nav>
+       <div class="container nav-container">
+           <a href="home.html" class="logo"><h3><span><i class="fa-brands fa-swift"></i></span><em>SWIFTY </em></h3></a>
+           <ul class="nav-link">
+               <li><a href="./blog.html">Blog</a></li>
+               <li><a href="./blog.html">Category</a></li>
+               <li><a href="./about.html">About</a></li>
+               <li><a href="./contact.html">Contact</a></li>
+               <li>
+               </li>
+             </ul>
+             <div class="profile">
+                 <div class="profile-img">
+                     <img src="./Images/profile.jpg" alt="">
+             </div>
+                 <ul>
+                     <li><a href="">Dashboard</a></li>
+                     <li><a href="signIn.html">LogOut</a></li>
+                 </ul>
+             </div>
+           <button class="phone-button open" id="Open"><i class="fa fa-bars"></i></button>
+           <button class="phone-button close" id="Close"><i class="fa fa-close"></i></button>
+       </div>
+   </nav>
 
-    <table id="userTable">
-        <thead>
-            <tr>
-                <th>User ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Table rows will be populated dynamically -->
-        </tbody>
-    </table>
+    <!-- Your date marquee code goes here -->
 
-    <!-- Add your JavaScript code here -->
+    <section class="form-section">
+        <div class="container ">
+            <h2>Manage User</h2>
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th style="width: 14%;">User ID</th>
+                        <th style="width: 26%;">Email</th>
+                        <th style="width: 30%;">Username</th>
+                        <th style="width: 10%;">Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be populated dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
     <script>
         // Retrieve user data from local storage or initialize an empty array
         var userData = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : [];
@@ -43,16 +114,20 @@
                 userIdCell.textContent = user.id;
                 row.appendChild(userIdCell);
 
-                var nameCell = document.createElement('td');
-                nameCell.textContent = user.name;
-                row.appendChild(nameCell);
-
                 var emailCell = document.createElement('td');
                 emailCell.textContent = user.email;
                 row.appendChild(emailCell);
 
+                var nameCell = document.createElement('td');
+                nameCell.textContent = user.name;
+                row.appendChild(nameCell);
+
+                var roleCell = document.createElement('td');
+                roleCell.textContent = user.role;
+                row.appendChild(roleCell);
+
                 var actionsCell = document.createElement('td');
-                var editButton = document.createElement('button');
+                var editButton = document.createElement('editBtn');
                 editButton.textContent = 'Edit';
                 editButton.addEventListener('click', function() {
                     editUser(user.id);
@@ -76,6 +151,7 @@
             // Perform action for editing user with the given userId
             console.log('Edit User:', userId);
             // Redirect to the edit user page with the userId as a parameter
+            // Replace 'editUser.html' with your actual edit user page URL
             window.location.href = 'editUser.html?userId=' + userId;
         }
 
