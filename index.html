@@ -6,58 +6,327 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="slider.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Swifty Blog Sign Up</title>
-    <style>
-        body{
-            background: #060634;
-        }
-        .form-section{
-            margin-top: 30px;
-        }
-        .date_marquee{
-            top: -85px;
-        }
-    </style>
+    <title>Swifty Blog</title>
 </head>
 <body>
-    <div class="date_marquee">
-        <div id="todaysDate"></div>
-        <marquee behavior="" direction="">Welcome To SWIFTY, a place to get valuable informations</marquee>
+      <nav>
+          <div class="container nav-container">
+                <a href="home.html" class="logo"><h3><span><i class="fa-brands fa-swift"></i></span><em>SWIFTY </em></h3></a>
+                <ul class="nav-link">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./blog.html">Blog</a></li>
+                    <li><a href="./blog.html">Category</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./signIn.html">SignIn</a></li>
+                </ul>
+                  <div class="profile">
+                      <div class="profile-img">
+                          <img src="./Images/profile.jpg" alt="">
+                      </div>
+                      <ul>
+                          <li><a href="signIn.html">Dashboard</a></li>
+                          <li><a href="">LogOut</a></li>
+                      </ul>
+                  </div>
+                <button class="phone-button open" id="Open"><i class="fa fa-bars"></i></button>
+                <button class="phone-button close" id="Close"><i class="fa fa-close"></i></button>
+          </div>
+      </nav>
+
+      <div class="date_marquee">
+              <div id="todaysDate"></div>
+              <marquee behavior="" direction="">Welcome To SWIFTY, a place to get valuable informations</marquee>
       </div>
 
-    <section class="form-section">
-        <div class="container form-section-container">
-            <h2 style="color: white;">Sign Up</h2>
-            <form action="" enctype="" id="signup-form">
-                <input type="text" placeholder="First Name" required>
-                <input type="text" placeholder="Last Name" required>
-                <input type="text" id="signup-email" placeholder="Email" required>
-                <input type="text" id="signup-username" placeholder="Desired Username" required>
-                <select style="background: rgb(23, 14, 150); color: aliceblue;">
-                    <option value="nationality" selected disabled>Nationality</option>
-                    <option value="">Nigeria</option>
-                    <option value="">Ghana</option>
-                    <option value="">Kenya</option>
-                    <option value="">South Africa</option>
-                    <option value="">Algeria</option>
-                    <option value="">Australia</option>
-                    <option value="">Frankfurt</option>
-                    <option value="">Singapore</option>
-                </select>
-                <input type="password" placeholder="Password" required>
-                <input type="password" id="signup-password" placeholder="Confirm Password" required>
-                <div class="form-control">
-                    <label style="color: aliceblue;" for="profile-img">Upload Profile Image</label>
-                    <input style="background-color: white;" type="file" id="upload-img">
-                </div>
-                <button type="submit" id="btnn">Sign Up</button>
-                <!-- <button  type="submit" id="btnn"><a href="signIn.html">Sign Up</a></button> -->
-                <small class="">Already have an account ?  <a href="signIn.html">Sign In</a></small>
-            </form>
-        </div>
-    </section>
+    <!-- ........SLIDERS...... -->
 
+          <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <img src="./Images/house.jpeg" style="width:100%">
+                    <div class="text">Caption Text</div>
+                </div>
+
+                <div class="mySlides fade">
+                      <img src="./Images/bg4.jpeg" style="width:100%">
+                      <div class="text">I love You</div>  
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="./Images/hope and believe.webp" style="width:100%">
+                    <div class="text">Caption Three</div>
+                </div>
+
+                <div class="mySlides fade">
+                  <img src="./Images/nature.jpg" style="width:100%">
+                  <div class="text">Caption Three</div>
+                </div>
+                
+                <div class="mySlides fade">
+                  <img src="./Images/bg3.jpeg" style="width:100%">
+                  <div class="text">Caption Three</div>
+                </div>
+
+                <div class="mySlides fade">
+                  <img src="./Images/cycling.webp" style="width:100%">
+                  <div class="text">Caption Three</div>
+                </div>
+
+          </div>
+
+  <br>
+
+          <div style="text-align:center; margin: -65px 2px 0 2px;">
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+          </div>
+
+        <section class="featured">
+            <div class="container featured-container">
+                <div class="post-thumb">
+                  <img src="./Images/lion.jpeg" alt="">
+                </div>
+
+              <div class="post-info">
+                  <div class="category-btn">Wildlife</div>
+                    <h2 class="post-title">
+                      <a href="./post.html">(THE REAL) FANTASTIC BEASTS AND WHERE TO FIND THEM - BIG CATS.</a>
+                    </h2>
+                    <p class="post-body">The Lion is not only one of the most iconic of all big cat species, but perhaps one of the most familiar creatures on the planet. 
+                      Once widespread throughout Africa, Asia and Southwestern Europe, numbers of this magnificent symbol of Africa have decreased drastically
+                      over the past century due to habitat loss, fragmentation, and human-wildlife conflict. In fact, their number has declined from around a whopping 400,000 in the 1950s to about 20,000 individuals today. 
+                      One of the largest in the feline family (second only to the tiger), African Lions can only be found today in sub-Saharan Africa with 80% situated in eastern and southern Africa. 
+                      One of the highest concentrations of these majestic animals lies in Ngorogoro Crater in the Serengeti National Park, Tanzania.
+                    <div class="post-profile">
+                        <div class="post-profile-img">
+                          <img src="./Images/profile.jpg" alt="">
+                        </div>
+                        <div class="post-profile-info">
+                          <h5>Olaiya Champion</h5>
+                          <small>June 29,2023 - 10:14</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+  
+  
+  
+  <section class="post">
+  <div class="post-container container">
+
+          <article class="post">
+                <div class="post-thumb">
+                  <img src="./Images/Charles-Soludo.jpg" alt="">
+                </div>
+                <div class="post-info">
+                  <div class="category-btn"><a href="politics.html">Politics</a></div>
+                  <h3 class="post-title"><a href="post.html">We need more philanthropists to boost education — Anambra govt.</a></h3>
+                    <p class="post-body">
+                      Anambra State Government, on Wednesday, sought support from stakeholders and philanthropists to boost the quality of science and technology education <a href="">....Read More</a>
+                    </p>
+                  <div class="post-profile">
+                    <div class="post-profile-img">
+                      <img src="./Images/profile.jpg" alt="">
+                    </div>
+                    <div class="post-profile-info">
+                      <h5>Michael Ovat</h5>
+                      <small>June 6,2023 - 08:14</small>
+                    </div>
+                </div>
+                </div>
+          </article>
+
+
+          <article class="post">
+            <div class="post-thumb">
+              <img src="./Images/benz.jpg" alt="">
+            </div>
+            <div class="post-info">
+                <div class="category-btn">AUtomobile</div>
+                <h3 class="post-title"><a href="post.html">Here’s A Glimpse Of The Upcoming Mercedes-Benz CLE Cabriolet.</a></h3>
+                <p class="post-body">
+                  Mercedes-Benz has taken the wraps off the stunning CLE Cabriolet together with its coupe counterpart earlier, offering car enthusiasts <a href="">....Read More</a>
+                </p>
+              <div class="post-profile">
+                  <div class="post-profile-img">
+                    <img src="./Images/profile.jpg" alt="">
+                  </div>
+                  <div class="post-profile-info">
+                    <h5>Giancarlo Perlas</h5>
+                    <small>July 6,2023 - 08:14</small>
+                  </div>
+            </div>
+            </div>
+          </article>
+
+
+
+
+          <article class="post">
+                <div class="post-thumb">
+                  <img src="./Images/travel1.jpg" alt="">
+                </div>
+                  <div class="post-info">
+                        <div class="category-btn">Photograpy</div>
+                        <h3 class="post-title"><a href="post.html">Lores earum  vel eos vero voluptates velit odit. Nam ullam nesciunt asperiores.</a></h3>
+                        <p class="post-body">
+                          Lorem ipsum dolor, sit amet consectetsciunt ad, dolores tempore Lormnis! Iure itaque odit facilis aperiam. ullam.
+                        </p>
+                        <div class="post-profile">
+                          <div class="post-profile-img">
+                            <img src="./Images/profile.jpg" alt="">
+                          </div>
+                          <div class="post-profile-info">
+                            <h5>Bobobombae</h5>
+                            <small>Feb 19,2023 - 08:14</small>
+                          </div>
+                  </div>
+                </div>
+          </article>
+
+
+          <article class="post">
+                <div class="post-thumb">
+                  <img src="./Images/pepsi.jpg" alt="">
+                </div>
+                <div class="post-info">
+                  <div class="category-btn">Marketing</div>
+                  <h3 class="post-title"><a href="post.html">The biggest rebrands and refreshes of 2023 so far.</a></h3>
+                  <p class="post-body">
+                    In an otherwise muted year for marketing, brand refreshes have been bountiful. The trend comes as the industry stands at an inflection <a href="">....Read More</a>
+                  </p>
+                  <div class="post-profile">
+                    <div class="post-profile-img">
+                      <img src="./Images/profile.jpg" alt="">
+                    </div>
+                    <div class="post-profile-info">
+                      <h5>Peter Adams</h5>
+                      <small>July 5,2023 - 08:14</small>
+                    </div>
+                </div>
+                </div>
+          </article>
+
+
+        <article class="post">
+                <div class="post-thumb">
+                  <img src="./Images/technews" alt="">
+                </div>
+                <div class="post-info">
+                  <div class="category-btn">Technology</div>
+                  <h3 class="post-title"><a href="post.html">Lorem ipsum dolor sit amet consectetur adipiusullam nesciunt asperiores.</a></h3>
+                  <p class="post-body">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similbus, odio rem ea quos alias autem adipisci, aliquam libero cumque fugit perspiciatis architecto, impedit doloribus repellendus omnis! Iure itaque odit facilis aperiam. ullam.
+                  </p>
+                  <div class="post-profile">
+                    <div class="post-profile-img">
+                      <img src="./Images/profile.jpg" alt="">
+                    </div>
+                    <div class="post-profile-info">
+                      <h5>Bobobombae</h5>
+                      <small>Feb 19,2023 - 08:14</small>
+                    </div>
+                </div>
+                </div>
+        </article>
+
+
+        <article class="post">
+              <div class="post-thumb">
+                <img src="./Images/travel1.jpg" alt="">
+              </div>
+              <div class="post-info">
+                  <div class="category-btn">Photograpy</div>
+                  <h3 class="post-title"><a href="post.html">Lorem ipsum dolor siro voluptates velit odit. Nam ullam nesciunt asperiores.</a></h3>
+                  <p class="post-body">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Simea quos alias autem adipisci, aliquam libero cumque fugit perspiciatis architecto, impedit doloribus repellendus omnis! Iure itaque odit facilis aperiam. ullam.
+                  </p>
+                  <div class="post-profile">
+                    <div class="post-profile-img">
+                      <img src="./Images/profile.jpg" alt="">
+                  </div>
+                    <div class="post-profile-info">
+                      <h5>Bobobombae</h5>
+                      <small>Feb 19,2023 - 08:14</small>
+                    </div>
+                </div>
+              </div>
+        </article>
+    </div>
+
+  </section>
+
+  <!-- .......category...... -->
+  <section class="categories">
+    <div class="category-container container">
+        <a href="" class="category-btn"><i class="fa-brands fa-cc-discover"></i>Discovery</a>
+        <a href="politics.html" class="category-btn"><i class="fa-solid fa-landmark"></i>Politics</a>
+        <a href="" class="category-btn"><i class="fa-solid fa-microchip"></i>Technology</a>
+        <a href="" class="category-btn"><i class="fa-solid fa-car"></i>Automobiles</a>
+        <a href="" class="category-btn"><i class="fa-solid fa-person-rays"></i>Marketing</a>
+        <a href="" class="category-btn"><i class="fa-solid fa-medal"></i>Sports</a>
+        <a href="" class="category-btn"><i class="fa-solid fa-plane"></i>Travels</a>
+        <a href="" class="category-btn"><i class="fa-solid fa-globe"></i>World</a>
+        <a href="" class="category-btn"><i class="fa-solid fa-person-dress"></i>Fashion</a>
+    </div>
+</section>
+
+  <!-- .......FOOTER -->
+    <footer>
+          <div class="footer-social">
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-twitter"></i></a>
+              <a href=""><i class="fa-brands fa-instagram"></i></a>
+              <a href=""><i class="fa-brands fa-linkedin"></i></a>
+              <a href=""><i class="fa-brands fa-discord"></i></a>
+          </div>
+          <div class="container footer-container">
+              <article>
+                      <h4>Categories</h4>
+                      <ul>
+                          <li><a>Discovery</a></li>
+                          <li><a>Technology</a></li>
+                          <li><a>Automobiles</a></li>
+                          <li><a>Politics</a></li>
+                          <li><a>Marketing</a></li>
+                          <li><a>Sports</a></li>
+                          <li><a>Travels</a></li>
+                          <li><a>World</a></li>
+                          <li><a>Fashion</a></li>
+                      </ul>
+              </article>
+              <article>
+                      <h4>Support</h4>
+                      <ul>
+                          <li><a href="">Online Support</a></li>
+                          <li><a href="">Email</a></li>
+                          <li><a href="">Services</a></li>
+                          <li><a href="">Blog</a></li>
+                          <li><a href="">Contact</a></li>
+                      </ul>
+              </article>
+              <article>
+                      <h4>Permalinks</h4>
+                      <ul>
+                          <li><a href="">Home</a></li>
+                          <li><a href="">About</a></li>
+                          <li><a href="">Phone Number</a></li>
+                          <li><a href="">Social Support</a></li>
+                          <li><a href="">Location</a></li>
+                      </ul>
+              </article>
+          </div>
+          <div class="footer-copy">
+            Copyright &copy; HERITAGIFY
+          </div>
+    </footer>
 </body>
 </html>
+
+
 <script src="script.js"></script>
-<script src="signUp.js"></script>
