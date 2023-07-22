@@ -686,16 +686,15 @@ form small a:hover{
         grid-template-columns: 4.5rem auto;
         padding: 0;
         color: #031958;
-        background: none;
         gap: 0;
     }
-    .dashboard aside h5{
+    .du{
         display: none;
     }
     .dashboard h2{
         color: black;
     }
-    .dashboard table th{
+    .dashboard table .mc{
         display: none;
     }
     

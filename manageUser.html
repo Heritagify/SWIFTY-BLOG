@@ -68,7 +68,8 @@
         }
         
 
-        /* @media screen and (max-width: 768px) {
+
+        @media screen and (max-width: 768px) {
             .nav-link {
                 display: none;
             }
@@ -105,23 +106,27 @@
             td, th {
                 padding: 8px 4px;
             }
-            .dashboard aside a {
-                padding: 1rem 0;
-            }
             .table-wrapper {
                 overflow-x: auto;
+                display: block;
             }
-            tbody tr td:nth-child(1):before {
-                content: "User ID:";
+            tbody tr {
+                display: block;
+                margin-bottom: 0.625rem; /* Adjust the spacing between rows for better readability */
             }
-            tbody tr td:nth-child(2):before {
-                content: "Email:";
+            tbody td {
+                display: flex;
+                justify-content: space-between;
             }
-            tbody tr td:nth-child(3):before {
-                content: "Username:";
+            tbody td:before {
+                content: attr(data-label);
+                color: #fff;
+                font-weight: bold;
+                margin-right: 1rem;
             }
-            tbody tr td:nth-child(4):before {
-                content: "Role:";
+            tbody tr td:last-child {
+                display: flex;
+                justify-content: flex-end;
             }
         }
 
@@ -143,7 +148,16 @@
             .form-section {
                 margin-top: 2rem;
             }
-        }     */
+            .table-wrapper {
+                overflow-x: auto;
+            }
+            tbody tr td {
+                display: table-cell;
+            }
+            tbody td:before {
+                display: none;
+            }
+        }    
 
 
 
