@@ -504,8 +504,8 @@ form small a:hover{
     display: flex;
     gap: 1rem;
     align-items: center;
-    padding: 1rem;
-    background: #0e359f;
+    padding: 1.5rem;
+    background: #06216d;
     border-bottom: 1px solid #0c0330;
 }
 .dashboard aside ul li:last-child a{
@@ -514,6 +514,25 @@ form small a:hover{
 .dashboard aside a:hover{
     background: transparent;
     opacity: 1;
+}
+.dashboard main{
+    margin-left: 2rem;
+}
+.dashboard h2{
+    margin: 0 0 1rem 0;
+}
+.dashboard table{
+    border: 2px solid white;
+    text-align: left;
+    width: 100%;
+}
+.dashboard table th{
+    background: #031958;
+    padding: .8rem;
+}
+.dashboard table td{
+    padding: .8rem;
+    border-bottom: 1px solid #031958;
 }
 
 
@@ -663,6 +682,24 @@ form small a:hover{
     .form-section-container{
         width: 90%;
     }
+    .dashboard-container{
+        grid-template-columns: 4.5rem auto;
+        padding: 0;
+        color: #031958;
+        background: none;
+        gap: 0;
+    }
+    .dashboard aside h5{
+        display: none;
+    }
+    .dashboard h2{
+        color: black;
+    }
+    .dashboard table th{
+        display: none;
+    }
+    
+    
 }
 
 
@@ -739,6 +776,7 @@ form small a:hover{
     .single-post-thumb{
         margin-top: 1rem;
     }
+   
 }
 
 

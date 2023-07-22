@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Manage User</title>
     <style>
         body{
@@ -44,6 +45,62 @@
             justify-content: center;
             gap: 20px;
         }
+        .dashboard{
+            margin-top: 6rem;
+        }
+        .dashboard aside a{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            padding: 1.5rem;
+            background: #06216d;
+            border-bottom: 1px solid #0c0330;
+        }
+        .dashboard a, .dashboard h5, h2{
+            color: whitesmoke;
+        }
+        .dashboard aside ul li:last-child a{
+            border-bottom: none;
+        }
+        .dashboard aside a:hover{
+            background: transparent;
+            opacity: 1;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-link {
+                display: none;
+            }
+            .phone-button.open {
+                display: block;
+            }
+            .phone-button.close {
+                display: none;
+            }
+            .profile {
+                display: none;
+            }
+            .dashboard {
+                margin-top: 2rem;
+            }
+            .dashboard-container {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .dashboard aside {
+                width: 100%;
+            }
+            .dashboard aside a {
+                width: 48%;
+                margin-bottom: 1rem;
+            }
+            .form-section {
+                margin-top: 2rem;
+            }
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -74,26 +131,59 @@
    </nav>
 
     <!-- Your date marquee code goes here -->
-
-    <section class="form-section">
-        <div class="container ">
-            <h2>Manage User</h2>
-            <table id="userTable">
-                <thead>
-                    <tr>
-                        <th style="width: 14%;">User ID</th>
-                        <th style="width: 26%;">Email</th>
-                        <th style="width: 30%;">Username</th>
-                        <th style="width: 10%;">Role</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Table rows will be populated dynamically -->
-                </tbody>
-            </table>
+<div class="dashboard">
+    
+        <div class="dashboard-container">
+            <aside>
+                <ul>
+                    <li><a href="addPost.html">
+                        <i class="fa fa-add"></i>
+                        <h5>Add Post</h5>
+                    </a></li>
+                    <li><a href="managePost.html">
+                        <i class="fa fa-pen"></i>
+                        <h5>Manage Post</h5>
+                    </a></li>
+                    <li><a href="addUser.html">
+                        <i class="fa fa-user-plus"></i>
+                        <h5>Add User</h5>
+                    </a></li>
+                    <li><a href="manageUser.html">
+                        <i class="fa fa-users"></i>
+                        <h5>Manage User</h5>
+                    </a></li>
+                    <li><a href="addCategory.html">
+                        <i class="fa fa-mobile"></i>
+                        <h5>Add Category</h5>
+                    </a></li>
+                    <li><a href="manageCategory.html">
+                        <i class="fa fa-list"></i>
+                        <h5>Manage Category</h5>
+                    </a></li>
+                </ul>
+            </aside>
+            <section class="form-section">
+                <div class="container ">
+                    <h2>Manage User</h2>
+                    <table id="userTable">
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Email</th>
+                                <th>Username</th>
+                                <th>Role</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Table rows will be populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
-    </section>
+</div>
+
 
     <script>
         // Retrieve user data from local storage or initialize an empty array
