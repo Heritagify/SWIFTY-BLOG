@@ -504,7 +504,7 @@ form small a:hover{
     display: flex;
     gap: 1rem;
     align-items: center;
-    padding: 2rem;
+    padding: 1rem;
     background: #0e359f;
     border-bottom: 1px solid #0c0330;
 }
