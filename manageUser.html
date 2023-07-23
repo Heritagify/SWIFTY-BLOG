@@ -84,10 +84,6 @@
             .dashboard {
                 margin-top: 2rem;
             }
-            .dashboard-container {
-                display: flex;
-                flex-wrap: wrap;
-            }
             .dashboard aside {
                 width: 100%;
             }
@@ -127,18 +123,18 @@
                 display: flex;
                 justify-content: flex-end;
             }
-            .dashboard section{
-            margin-top: 0rem;
-        }
+            .dashboard-container{
+                display: block;
+            }
+            .dashboard-container h5{
+                display: block;
+            }
         }
 
         /* Additional responsive styles for larger screens */
         @media screen and (min-width: 769px) {
             .dashboard {
                 margin-top: 6rem;
-            }
-            .dashboard-container {
-                display: flex;
             }
             .dashboard aside {
                 width: 25%;
@@ -161,9 +157,9 @@
             }
         }    
 
-        .dashboard section{
+        /* .dashboard section{
             margin-top: -20rem;
-        }
+        } */
 
 
 
