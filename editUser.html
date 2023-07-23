@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Edit User</title>
     <style>
         body{
@@ -31,6 +32,16 @@
         section .container{
             margin-top: 2rem;
         }
+        
+
+        @media screen and (max-width: 768px) {
+            .dashboard-container{
+                display: block;
+            }
+            .dashboard-container h5{
+                display: block;
+            }
+        }   
     </style>
 </head>
 <body>
@@ -62,22 +73,58 @@
 
     <!-- Your date marquee code goes here -->
 
-    <section class="form-section auser">
-        <div class="container form-section-container">
-            <h2 style="color: white;">Edit User</h2>
-            <form action="" enctype="" id="editUserForm">
-                <input type="hidden" id="userId">
-                <input type="text" id="editEmail" placeholder="Email" required>
-                <input type="text" id="editName" placeholder="Username" required>
-                <select id="editUserRole">
-                    <option value="admin">Admin</option>
-                    <option value="author">Author</option>
-                </select>
-                <input type="password" id="editPassword" placeholder="New Password">
-                <button type="submit" id="editUserBtn">Update User</button>
-            </form>
+
+    <div class="dashboard">
+        <div class="dashboard-container">
+            <aside>
+                <ul>
+                    <li><a href="addPost.html">
+                        <i class="fa fa-add"></i>
+                        <h5 class="du">Add Post</h5>
+                    </a></li>
+                    <li><a href="managePost.html">
+                        <i class="fa fa-pen"></i>
+                        <h5 class="du">Manage Post</h5>
+                    </a></li>
+                    <li><a href="addUser.html">
+                        <i class="fa fa-user-plus"></i>
+                        <h5 class="du">Add User</h5>
+                    </a></li>
+                    <li><a href="manageUser.html">
+                        <i class="fa fa-users"></i>
+                        <h5 class="du">Manage User</h5>
+                    </a></li>
+                    <li><a href="addCategory.html">
+                        <i class="fa fa-mobile"></i>
+                        <h5 class="du">Add Category</h5>
+                    </a></li>
+                    <li><a href="manageCategory.html">
+                        <i class="fa fa-list"></i>
+                        <h5 class="du">Manage Category</h5>
+                    </a></li>
+                </ul>
+            </aside>
+            
+            <section class="form-section auser">
+                <div class="container form-section-container">
+                    <h2 style="color: white;">Edit User</h2>
+                    <form action="" enctype="" id="editUserForm">
+                        <input type="hidden" id="userId">
+                        <input type="text" id="editEmail" placeholder="Email" required>
+                        <input type="text" id="editName" placeholder="Username" required>
+                        <select id="editUserRole">
+                            <option value="admin">Admin</option>
+                            <option value="author">Author</option>
+                        </select>
+                        <input type="password" id="editPassword" placeholder="New Password">
+                        <button type="submit" id="editUserBtn">Update User</button>
+                    </form>
+                </div>
+            
+            </section>
         </div>
-    </section>
+
+    </div>
 
     <script>
         // Retrieve user data from local storage or initialize an empty array
