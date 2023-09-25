@@ -1,0 +1,69 @@
+<!-- edit.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Blog Post</title>
+</head>
+<body>
+    <h1>Edit Blog Post</h1>
+    <form id="editForm">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content" rows="5" cols="40" required></textarea><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Retrieve the blog post id from the query parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get("id");
+
+            // Retrieve the blog post data from local storage using postId
+            const blogPostJson = localStorage.getItem("blogPosts");
+            const blogPosts = JSON.parse(blogPostJson) || [];
+
+            // Find the blog post to edit based on postId
+            const blogPostToEdit = blogPosts.find(post => post.id === postId);
+
+            if (blogPostToEdit) {
+                // Populate the form fields with the existing data
+                document.getElementById("title").value = blogPostToEdit.title;
+                document.getElementById("content").value = blogPostToEdit.content;
+            }
+
+            // Handle the form submission for editing
+            const editForm = document.getElementById("editForm");
+            editForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                // Update the blog post data with the edited values
+                const editedBlogPost = {
+                    id: postId, // Preserve the original id
+                    title: document.getElementById("title").value,
+                    content: document.getElementById("content").value,
+                    // Add other properties as needed
+                };
+
+                // Find and replace the existing blog post in the array
+                const indexToEdit = blogPosts.findIndex(post => post.id === postId);
+                if (indexToEdit !== -1) {
+                    blogPosts[indexToEdit] = editedBlogPost;
+                }
+
+                // Update the local storage with the modified data
+                localStorage.setItem("blogPosts", JSON.stringify(blogPosts));
+
+                // Redirect back to the view page
+                window.location.href = "newPost.html";
+            });
+        });
+    </script>
+</body>
+</html>

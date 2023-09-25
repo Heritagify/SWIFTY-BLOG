@@ -4,9 +4,188 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Contact Us</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a background color to the body */
+body {
+    font-family: Arial, sans-serif;
+    background: rgb(6, 6, 68);
+}
+
+/* Center the contact form */
+.contact-form {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Style the form container */
+.containera {
+    margin-top: -170px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 2rem;
+}
+
+/* Style the form heading */
+.contact-form h2 {
+    color: #fff;
+    font-size: 54px;
+    margin-bottom: 20px;
+}
+.contact-form p{
+    color: #fff;
+}
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: px;
+    color: #fff;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+/* Style the message textarea */
+textarea {
+    resize: vertical;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+}
+
+    </style>
 </head>
 <body>
-    
+    <nav>
+        <div class="container nav-container">
+              <a href="home.html" class="logo"><h3><span><i class="fa-brands fa-swift"></i></span><em>SWIFTY </em></h3></a>
+              <ul class="nav-link">
+                  <li><a href="./index.html">Home</a></li>
+                  <li><a href="./blog.html">Blog</a></li>
+                  <li><a href="./newPost.html">New posts</a></li>
+                  <li><a href="./about.html">About</a></li>
+                  <li><a href="./contact.html">Contact</a></li>
+                  <li><a href="./signIn.html">SignIn</a></li>
+              </ul>
+                <div class="profile">
+                    <div class="profile-img">
+                        <img src="./Images/profile.jpg" alt="">
+                    </div>
+                    <ul>
+                        <li><a href="signIn.html">Dashboard</a></li>
+                        <li><a href="index.html">LogOut</a></li>
+                    </ul>
+                </div>
+              <button class="phone-button open" id="Open"><i class="fa fa-bars"></i></button>
+              <button class="phone-button close" id="Close"><i class="fa fa-close"></i></button>
+        </div>
+    </nav>
+
+    <section class="contact-form">
+        <div class="containera">
+            <h2>Contact Us</h2>
+            <p>Have questions or feedback? Fill out the form below to get in touch with us.</p>
+
+            <form action="process_contact.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-social">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            <a href=""><i class="fa-brands fa-discord"></i></a>
+        </div>
+        <div class="container footer-container">
+            <article>
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a>Discovery</a></li>
+                        <li><a>Technology</a></li>
+                        <li><a>Automobiles</a></li>
+                        <li><a>Politics</a></li>
+                        <li><a>Marketing</a></li>
+                        <li><a>Sports</a></li>
+                        <li><a>Travels</a></li>
+                        <li><a>World</a></li>
+                        <li><a>Fashion</a></li>
+                    </ul>
+            </article>
+            <article>
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="">Online Support</a></li>
+                        <li><a href="">Email</a></li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+            </article>
+            <article>
+                    <h4>Permalinks</h4>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Phone Number</a></li>
+                        <li><a href="">Social Support</a></li>
+                        <li><a href="">Location</a></li>
+                    </ul>
+            </article>
+        </div>
+        <div class="footer-copy">
+          Copyright &copy; HERITAGIFY
+        </div>
+  </footer>
 </body>
 </html>

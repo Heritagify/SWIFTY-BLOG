@@ -3,240 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="slider.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Swifty Blog</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background: #060634;
-      }
-
-      h1 {
-        text-align: center;
-        margin-top: 80px;
-        color: aliceblue;
-        box-shadow: 1px 2px 15px solid brown;
-      }
-      .post-title{
-        color: aliceblue !important;
-        font-size: 40px;
-        text-transform: uppercase;
-        line-height: normal;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        text-align: center;
-      }
-      .contain{
-          margin: 2rem 0 2rem;
+        body {
+            font-family: Arial, sans-serif;
+            background: #060634;
         }
-        #blogPosts{
-          gap: 5rem;
-          display: flex;
-          border: 2px solid green !important;
-          width: 100vw;
 
+        h1 {
+            text-align: center;
+            margin-top: 80px;
+            color: aliceblue;
+            box-shadow: 1px 2px 15px solid brown;
         }
-        /* .post-container{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
 
-      } */
-      .single-post-thumb{
-          margin-top: 1.5rem;
-          height: 160px;
-          border-top-left-radius: 40px;
-          border-bottom-right-radius: 40px;
-          border: .5rem solid purple;
-      }
+        .post-title {
+            color: aliceblue !important;
+            font-size: 40px;
+            text-transform: uppercase;
+            line-height: normal;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+        }
 
-      .single-post-container{
-        width: 30rem;
-        padding: 1rem 2rem 2rem;
-        background: #630202;
-        border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
+        .contain {
+            margin: 2rem 0 2rem;
+        }
 
-      .post-body{
-          width: 16rem;
-          color: aliceblue;
-          font-size: 20px;
-          margin-top: 1rem;
-          line-height: 1.7;
-          word-wrap: break-word;
-      }
+        #blogPosts {
+            gap: 5rem;
+            display: flex;
+            border: 2px solid green !important;
+            width: 100vw;
+        }
+
+        .single-post-thumb {
+            margin-top: 1.5rem;
+            height: 160px;
+            border-top-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            border: .5rem solid purple;
+        }
+
+        .single-post-container {
+            width: 30rem;
+            padding: 1rem 2rem 2rem;
+            background: #630202;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-body {
+            width: 16rem;
+            color: aliceblue;
+            font-size: 20px;
+            margin-top: 1rem;
+            line-height: 1.7;
+            word-wrap: break-word;
+        }
+
+        .edit-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .delete-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
-  <nav>
+<nav>
     <div class="container nav-container">
         <a href="home.html" class="logo"><h3><span><i class="fa-brands fa-swift"></i></span><em>SWIFTY </em></h3></a>
         <ul class="nav-link">
-            <li><a href="./home.html">Home</a></li>
+            <li><a href="./index.html">Home</a></li>
             <li><a href="./blog.html">Blog</a></li>
             <li><a href="./blog.html">Category</a></li>
             <li><a href="./about.html">About</a></li>
             <li><a href="./contact.html">Contact</a></li>
             <li><a href="./signIn.html">SignIn</a></li>
-            <li>
-            </li>
-          </ul>
-          <div class="profile">
-              <div class="profile-img">
-                  <img src="./Images/profile.jpg" alt="">
-          </div>
-              <ul>
-                  <li><a href="signIn.html">Dashboard</a></li>
-                  <li><a href="index.html">LogOut</a></li>
-              </ul>
-          </div>
+        </ul>
+        <div class="profile">
+            <div class="profile-img">
+                <img src="./Images/profile.jpg" alt="">
+            </div>
+            <ul>
+                <li><a href="signIn.html">Dashboard</a></li>
+                <li><a href="index.html">LogOut</a></li>
+            </ul>
+        </div>
         <button class="phone-button open" id="Open"><i class="fa fa-bars"></i></button>
         <button class="phone-button close" id="Close"><i class="fa fa-close"></i></button>
     </div>
 </nav>
 
 <h1>View Blog Posts</h1>
-        <section class="single-post">
-          <div class="post-container">
-            
-                    <div class="contain">
-                      <div id="blogPosts"></div>
-                    </div>
-          </div>
-        </section>
+<section class="single-post">
+    <div class="post-container">
+        <div class="contain">
+            <div id="blogPosts"></div>
+        </div>
+    </div>
+</section>
 
-        <footer>
-          <div class="footer-social">
-              <a href=""><i class="fa-brands fa-facebook"></i></a>
-              <a href=""><i class="fa-brands fa-twitter"></i></a>
-              <a href=""><i class="fa-brands fa-instagram"></i></a>
-              <a href=""><i class="fa-brands fa-linkedin"></i></a>
-              <a href=""><i class="fa-brands fa-discord"></i></a>
-          </div>
-          <div class="container footer-container">
-              <article>
-                      <h4>Categories</h4>
-                      <ul>
-                          <li><a>Discovery</a></li>
-                          <li><a>Technology</a></li>
-                          <li><a>Automobiles</a></li>
-                          <li><a>Politics</a></li>
-                          <li><a>Marketing</a></li>
-                          <li><a>Sports</a></li>
-                          <li><a>Travels</a></li>
-                          <li><a>World</a></li>
-                          <li><a>Fashion</a></li>
-                      </ul>
-              </article>
-              <article>
-                      <h4>Support</h4>
-                      <ul>
-                          <li><a href="">Online Support</a></li>
-                          <li><a href="">Email</a></li>
-                          <li><a href="">Services</a></li>
-                          <li><a href="">Blog</a></li>
-                          <li><a href="">Contact</a></li>
-                      </ul>
-              </article>
-              <article>
-                      <h4>Permalinks</h4>
-                      <ul>
-                          <li><a href="">Home</a></li>
-                          <li><a href="">About</a></li>
-                          <li><a href="">Phone Number</a></li>
-                          <li><a href="">Social Support</a></li>
-                          <li><a href="">Location</a></li>
-                      </ul>
-              </article>
-          </div>
-          <div class="footer-copy">
-            Copyright &copy; HERITAGIFY
-          </div>
-    </footer>
+<footer>
+    <div class="footer-social">
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-twitter"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+        <a href=""><i class="fa-brands fa-discord"></i></a>
+    </div>
+    <div class="container footer-container">
+        <article>
+            <h4>Categories</h4>
+            <ul>
+                <li><a>Discovery</a></li>
+                <li><a>Technology</a></li>
+                <li><a>Automobiles</a></li>
+                <li><a>Politics</a></li>
+                <li><a>Marketing</a></li>
+                <li><a>Sports</a></li>
+                <li><a>Travels</a></li>
+                <li><a>World</a></li>
+                <li><a>Fashion</a></li>
+            </ul>
+        </article>
+        <article>
+            <h4>Support</h4>
+            <ul>
+                <li><a href="">Online Support</a></li>
+                <li><a href="">Email</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </article>
+        <article>
+            <h4>Permalinks</h4>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Phone Number</a></li>
+                <li><a href="">Social Support</a></li>
+                <li><a href="">Location</a></li>
+            </ul>
+        </article>
+    </div>
+    <div class="footer-copy">
+        Copyright &copy; HERITAGIFY
+    </div>
+</footer>
 </body>
 </html>
 
-  <script>
+<script>
+    // Function to retrieve blog posts from local storage and display them
+    function displayBlogPosts() {
+        const blogPostsContainer = document.getElementById('blogPosts');
+        blogPostsContainer.innerHTML = '';
 
-// Function to retrieve blog posts from local storage and display them
-        function displayBlogPosts() {
-          const blogPostsContainer = document.getElementById('blogPosts');
-          blogPostsContainer.innerHTML = '';
-          
-          const blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
-          
-          blogPosts.forEach(function(blogPost) {
-                const postContainer = document.createElement('div');
-                postContainer.classList.add('single-post-container');
-                
-                const postImage = document.createElement('img');
-                postImage.classList.add('single-post-thumb');
-                postImage.src = blogPost.imageSrc;
+        const blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
 
-                const selectOption = document.createElement('div');
-                selectOption.classList.add('category-btn');
-                selectOption.textContent = `${blogPost.category}`;
+        blogPosts.forEach(function (blogPost) {
+            const postContainer = document.createElement('div');
+            postContainer.classList.add('single-post-container');
 
-                const postTitle = document.createElement('h2');
-                postTitle.classList.add('post-title');
-                postTitle.textContent=blogPost.title;
+            const postImage = document.createElement('img');
+            postImage.classList.add('single-post-thumb');
+            postImage.src = blogPost.imageSrc;
 
+            const selectOption = document.createElement('div');
+            selectOption.classList.add('category-btn');
+            selectOption.textContent = `${blogPost.category}`;
 
-                const postContent = document.createElement('p');
-                postContent.classList.add('post-body')
-                postContent.textContent = blogPost.content;
-                
-                postContainer.appendChild(postTitle);
-                postContainer.appendChild(postImage);
-                postContainer.appendChild(selectOption);
-                postContainer.appendChild(postContent);
-                
-                blogPostsContainer.appendChild(postContainer);
-          });
-        }
+            const postTitle = document.createElement('h2');
+            postTitle.classList.add('post-title');
+            postTitle.textContent = blogPost.title;
 
-       // Display initial blog posts
+            const postContent = document.createElement('p');
+            postContent.classList.add('post-body')
+            postContent.textContent = blogPost.content;
+
+            const editButton = document.createElement('button');
+            editButton.textContent = 'Edit';
+            editButton.classList.add('edit-button');
+            editButton.addEventListener('click', () => editBlogPost(blogPost.id)); // Assuming you have an id property in your blog post objects
+
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.classList.add('delete-button');
+            deleteButton.addEventListener('click', () => deleteBlogPost(blogPost.id)); // Assuming you have an id property in your blog post objects
+
+            postContainer.appendChild(postTitle);
+            postContainer.appendChild(postImage);
+            postContainer.appendChild(selectOption);
+            postContainer.appendChild(postContent);
+            postContainer.appendChild(editButton);
+            postContainer.appendChild(deleteButton);
+
+            blogPostsContainer.appendChild(postContainer);
+        });
+    }
+
+    // Function to delete a blog post
+    function deleteBlogPost(id) {
+        const blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+
+        // Find the index of the blog post to delete based on its id
+        const indexToDelete = blogPosts.findIndex(post => post.id === id);
+
+        if (indexToDelete !== -1) {
+            // Remove the blog post from the array
+            blogPosts.splice(indexToDelete, 1);
+
+            // Update local storage with the modified array
+            localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+
+            // Refresh the displayed blog posts
             displayBlogPosts();
-
-  </script>
-
-
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <title>View Blog Post</title>
-</head>
-<body>
-  <h1>View Blog Post</h1>
-  <div id="blogPost"></div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const blogPostJson = localStorage.getItem("blogPost");
-
-      if (blogPostJson) {
-        const blogPost = JSON.parse(blogPostJson);
-
-        const blogPostDiv = document.getElementById("blogPost");
-        blogPostDiv.innerHTML = `
-          <h2>${blogPost.title}</h2>
-          <p>${blogPost.content}</p>
-          <button onclick="deleteBlogPost()">Delete</button>
-          <button onclick="loveBlogPost()">Love</button>
-        `;
-      }
-    });
-
-    function deleteBlogPost() {
-      localStorage.removeItem("blogPost");
-      location.reload(); // Refresh the page
+        }
     }
 
-    function loveBlogPost() {
-      // Implement the desired action when the blog post is loved
-      alert("You loved this blog post!");
+    // Function to edit a blog post
+    function editBlogPost(id) {
+        // Redirect to the edit page with the blog post id
+        window.location.href = `edit.html?id=${id}`;
     }
-  </script>
-</body>
-</html> -->
+
+    // Display initial blog posts
+    displayBlogPosts();
+</script>
