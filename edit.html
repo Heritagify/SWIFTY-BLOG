@@ -13,14 +13,17 @@
             text-align: center;
             padding: 20px;
         }
+        section{
+            margin-top: 5rem;
+        }
 
         h1 {
-            color: #ffa500;
+            color: #fec0bf;
             text-shadow: 1px 1px 2px #000;
         }
 
         form {
-            max-width: 500px;
+            max-width: 555px;
             margin: 0 auto;
             background-color: #630202;
             padding: 20px;
@@ -31,7 +34,7 @@
         label {
             display: block;
             margin-top: 10px;
-            color: #ffa500;
+            color: #fec0bf;
         }
 
         input[type="text"],
@@ -40,7 +43,7 @@
             padding: 10px;
             margin-top: 5px;
             border: none;
-            background-color: #333;
+            background-color: #fbdedd;
             color: #fff;
             border-radius: 4px;
         }
@@ -49,7 +52,7 @@
             background-color: #4CAF50;
             color: #fff;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 40px;
             margin-top: 20px;
             text-align: center;
             text-decoration: none;
@@ -86,23 +89,24 @@
             <button class="phone-button close" id="Close"><i class="fa fa-close"></i></button>
         </div>
     </nav>
-    
-    <h1>Edit Blog Post</h1>
-    <form id="editForm">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required><br><br>
 
-        <label for="content">Content:</label><br>
-        <textarea id="content" name="content" rows="5" cols="40" required></textarea><br><br>
-
-        <button type="submit">Save</button>
-    </form>
+    <section>
+        <h1>Edit Blog Post</h1>
+        <form id="editForm">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br><br>
+            <label for="content">Content:</label><br>
+            <textarea id="content" name="content" rows="5" cols="40" required></textarea><br><br>
+            <button type="submit">Save</button>
+        </form>
+    </section>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Retrieve the blog post id from the query parameter
             const urlParams = new URLSearchParams(window.location.search);
             const postId = urlParams.get("id");
+            console.log(postId);
 
             // Retrieve the blog post data from local storage using postId
             const blogPostJson = localStorage.getItem("blogPosts");
