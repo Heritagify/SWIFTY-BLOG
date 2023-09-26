@@ -1,13 +1,92 @@
-<!-- edit.html -->
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Edit Blog Post</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #060634;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ffa500;
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #630202;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #ffa500;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <div class="container nav-container">
+            <a href="home.html" class="logo"><h3><span><i class="fa-brands fa-swift"></i></span><em>SWIFTY </em></h3></a>
+            <ul class="nav-link">
+                <li><a href="./dashboard.html">Dashboard</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./blog.html">Category</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li>
+                </li>
+              </ul>
+              <div class="profile">
+                  <div class="profile-img">
+                      <img src="./Images/profile.jpg" alt="">
+              </div>
+                  <ul>
+                      <li><a href="dashboard.html">Dashboard</a></li>
+                      <li><a href="home.html">LogOut</a></li>
+                  </ul>
+              </div>
+            <button class="phone-button open" id="Open"><i class="fa fa-bars"></i></button>
+            <button class="phone-button close" id="Close"><i class="fa fa-close"></i></button>
+        </div>
+    </nav>
+    
     <h1>Edit Blog Post</h1>
     <form id="editForm">
         <label for="title">Title:</label>
