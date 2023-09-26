@@ -8,89 +8,113 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Swifty Blog</title>
     <style>
+     /* Reset some default styles */
+     body, h2, h3, h4, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: Arial, sans-serif;
             background: #060634;
-        }
-
+        }  
         h1 {
             text-align: center;
             margin-top: 80px;
-            color: aliceblue;
-            box-shadow: 1px 2px 15px solid brown;
+            margin-bottom: 30px;
+            color: #f8f4f4;
+            text-shadow: 1px 1px 2px #000;
+            font-size: 45px;
         }
-
-        .post-title {
-            color: aliceblue !important;
-            font-size: 40px;
-            text-transform: uppercase;
-            line-height: normal;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            text-align: center;
-        }
-
-        .contain {
-            margin: 2rem 0 2rem;
-        }
-
-        #blogPosts {
-            gap: 5rem;
+        #blogPosts{
+            border: 5px solid white;
             display: flex;
-            border: 2px solid green !important;
-            width: 100vw;
+            justify-content: space-between;
+            gap: 5rem;
+        }
+        .single-post{
+            margin-top: -10px;
+            padding: 0 4rem;
+            width: 100%;
+            display: flex;
+
+        }
+        .single-post-container {
+            border: 6px solid rgb(239, 52, 239);
+            /* width: 70%; */
+            max-width: 300px;
+            background: #630202;
+            border-top-right-radius: 88px;
+            border-bottom-left-radius: 78px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            margin-bottom: 30px;
         }
 
         .single-post-thumb {
-            margin-top: 1.5rem;
-            height: 160px;
-            border-top-left-radius: 40px;
-            border-bottom-right-radius: 40px;
-            border: .5rem solid purple;
+            max-width: 100%;
+            max-height: 20rem;
+            border-radius: 8px;
         }
 
-        .single-post-container {
-            width: 30rem;
-            padding: 1rem 2rem 2rem;
-            background: #630202;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .category-btn {
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+
+        .post-title {
+            color: #fec0bf;
+            padding: 1rem;
+            font-size: 28px;
+            text-transform: uppercase;
+            line-height: normal;
+            text-align: center;
+            max-width: 100%;
         }
 
         .post-body {
-            width: 16rem;
-            color: aliceblue;
-            font-size: 20px;
-            margin-top: 1rem;
-            line-height: 1.7;
-            word-wrap: break-word;
+            color: #fff;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-top: 20px;
         }
 
-        .edit-button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
+        .edit-button{
+            background-color: green;
+            color: #ffff;
+            border: 2px solid #fec0bf;
             padding: 10px 20px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
-            margin: 4px 2px;
+            margin: 10px;
             cursor: pointer;
             border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-
         .delete-button {
-            background-color: #f44336;
-            color: white;
-            border: none;
+            background-color: red;
+            color: #fec0bf;
+            border: 2px solid #fec0bf;
             padding: 10px 20px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
-            margin: 4px 2px;
+            margin: 10px;
             cursor: pointer;
             border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .edit-button:hover, .delete-button:hover {
+            background-color: #fec0bf;
+            color: #fff;
         }
     </style>
 </head>
@@ -121,7 +145,7 @@
 </nav>
 
 <h1>View Blog Posts</h1>
-<section class="single-post">
+<section class="single-post" style="border: 3px solid red;">
     <div class="post-container">
         <div class="contain">
             <div id="blogPosts"></div>
@@ -189,6 +213,10 @@
         const blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
 
         blogPosts.forEach(function (blogPost) {
+            const postTitle = document.createElement('h2');
+            postTitle.classList.add('post-title');
+            postTitle.textContent = blogPost.title;
+            
             const postContainer = document.createElement('div');
             postContainer.classList.add('single-post-container');
 
@@ -200,9 +228,6 @@
             selectOption.classList.add('category-btn');
             selectOption.textContent = `${blogPost.category}`;
 
-            const postTitle = document.createElement('h2');
-            postTitle.classList.add('post-title');
-            postTitle.textContent = blogPost.title;
 
             const postContent = document.createElement('p');
             postContent.classList.add('post-body')
